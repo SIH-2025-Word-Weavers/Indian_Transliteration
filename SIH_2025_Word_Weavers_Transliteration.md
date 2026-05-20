@@ -185,12 +185,12 @@ References: https://ashishware.com/2006/06/25/Transl.shtml/
 
 |  | Name | Gender | Email Id | Mobile No | Stream | Academic Year |
 | :---: | ----- | :---: | ----- | :---: | :---: | :---: |
-| **Team Leader** | ADHIMULAM BHARGAV SAI VISWANATH | M | bhargavsaiadhimulam12@gmail.com | \+91 7013833594 | CSM | 2025-2026 |
-| **Team Member** | BATHULA MOHANA SRI HARI | M | mohanasriharibattula69315@gmail.com | \+91 8142916008 | CSM | 2025-2026 |
-| **Team Member** | BITRA BHAVANI | F | bitrabhavani10@gmail.com | \+91 9966557202 | CSM | 2025-2026 |
-| **Team Member** | BITRA JAYA SRI | F | bjayasri5002@gmail.com | \+91 9392868600 | CSM | 2025-2026 |
-| **Team Member** | BOLAGANI BABY PRASANNA | F | babyprasannabolagani@gmail.com | \+91 6302383148 | CSM | 2025-2026 |
-| **Team Member** | JAGGARAPU VENKATA SAI | M | jaggarapuvenkatasai@gmail.com | \+91 8500464760 | AI\&DS | 2025-2026 |
+| **Team Leader** | ADHIMULAM BHARGAV SAI VISWANATH | M | bhargavsaiadhimulam12@gmail.com | \+91 xxxxxxxxxx | CSM | 2025-2026 |
+| **Team Member** | BATHULA MOHANA SRI HARI | M | mohanasriharibattula69315@gmail.com | \+91 xxxxxxxxxx | CSM | 2025-2026 |
+| **Team Member** | BITRA BHAVANI | F | bitrabhavani10@gmail.com | \+91 xxxxxxxxxx | CSM | 2025-2026 |
+| **Team Member** | BITRA JAYA SRI | F | bjayasri5002@gmail.com | \+91 xxxxxxxxxx | CSM | 2025-2026 |
+| **Team Member** | BOLAGANI BABY PRASANNA | F | babyprasannabolagani@gmail.com | \+91 xxxxxxxxxx | CSM | 2025-2026 |
+| **Team Member** | JAGGARAPU VENKATA SAI | M | jaggarapuvenkatasai@gmail.com | \+91 xxxxxxxxxx | AI\&DS | 2025-2026 |
 
 # Commands Used in Mohan's Laptop
 
