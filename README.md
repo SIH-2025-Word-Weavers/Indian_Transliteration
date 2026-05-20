@@ -1,146 +1,161 @@
-# LipiSathi — Indian Transliteration Toolkit
+# LipiSathi — Internet-Free Indian Transliteration
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![SIH](https://img.shields.io/badge/SIH-2025-important)
+![Problem%20ID](https://img.shields.io/badge/Problem%20ID-SIH25155-success)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-An offline-first Indian script transliteration project built by **Team Word Weavers** for **Smart India Hackathon 2025 (SIH25155)**.
+> **Read any Indian signboard in your familiar script — instantly, and offline.**
 
-This repository currently contains a notebook-based transliteration engine that focuses on **script-to-script transliteration** (not translation), preserving pronunciation while changing script.
+Built by **Team Word Weavers** for **Smart India Hackathon 2025 (SIH25155)**.
 
-## Project Overview
+---
 
-India uses many scripts, and people often struggle to read local signboards outside their home region. This project targets that problem by converting text from one Indian script to another while preserving phonetic sound.
+## 1) About the Problem
 
-Current repository scope:
-- Rule-based transliteration core in a Jupyter Notebook
-- Script detection using Unicode ranges
-- Multi-script mapping through a Devanagari hub
-- Language-aware post-processing (initial Hindi rules)
-- Exception dictionary for special words/loanwords
+India has many scripts, and travelers often cannot read local signboards outside their home region.  
+**LipiSathi** addresses this by converting text from one Indian script to another while preserving pronunciation.
 
-## Main Features
+### Transliteration vs Translation
+- **Translation** = meaning changes to another language
+- **Transliteration** = script changes, sound stays the same
 
-- **Automatic script detection** for input text
-- **Hub-and-spoke transliteration architecture** (source script → Devanagari → target script)
-- **Supported scripts in current implementation**:
-  - Devanagari
-  - Telugu
-  - Tamil
-  - Kannada
-  - Malayalam
-  - Gurmukhi
-  - Bengali (incl. Assamese block coverage)
-  - Odia
-  - Gujarati
-- **Exception dictionary support** for manually curated word mappings
-- **Language-specific post-processing hooks** (currently Hindi schwa/orthographic handling)
-- **Interactive CLI loop** in the notebook code for quick trials
+---
 
-## Technical Approach / Architecture
+## 2) Project Highlights
 
-The transliteration logic in `transliteration_algorithm.ipynb` uses a deterministic approach:
+- ✅ **Offline-first** approach
+- ✅ **Automatic script detection** (Unicode-range based)
+- ✅ **Hub-and-spoke architecture** (source script → Devanagari → target script)
+- ✅ **Multi-script support** in current notebook implementation:
+  - Devanagari, Telugu, Tamil, Kannada, Malayalam
+  - Gurmukhi, Bengali (incl. Assamese block), Odia, Gujarati
+- ✅ **Exception dictionary support** for special/loan words
+- ✅ **Language-specific post-processing hooks** (initial Hindi handling)
 
-1. **Detect source script** using Unicode block counts
-2. **Normalize via hub** by converting source text into Devanagari
-3. **Convert to target script** using reverse mappings generated from base maps
-4. **Apply optional language rules** for orthographic refinements
-5. **Return transliterated output** (or clear unsupported-script messages)
+> Note: Current repository implementation is notebook-first transliteration logic.  
+> OCR/camera overlay/TTS are part of the broader SIH solution direction.
 
-### High-Level Flow
+---
+
+## 3) Visual Showcase
+
+### System Flow (SIH Solution Vision)
+
+```mermaid
+flowchart LR
+    A[Capture Signboard] --> B[OCR + Script Identification]
+    B --> C[Transliteration Engine]
+    C --> D[Render in User Script]
+    D --> E[Text-to-Speech]
+```
+
+### Current Core Transliteration Flow (Implemented)
 
 `Input Text -> Script Detection -> Source→Devanagari Mapping -> Devanagari→Target Mapping -> Language Rules -> Output`
 
-## Repository Structure
+### Quick Example
 
-- `transliteration_algorithm.ipynb` — main transliteration implementation and demo logic
-- `SIH25Team8058920250930052829.pdf` — project submission/supporting document
-- `LICENSE.md` — MIT license
-- `README.md` — project documentation
+| Input Script | Input Text | Output Script | Output Text |
+|---|---|---|---|
+| Telugu | మీరు ఎలా ఉన్నారు? | Roman | meeru elaa unnaru? |
+| Malayalam | തിരുവനന്തപുരം | Telugu | తిరువనంతపురం |
 
-## Setup & Installation
+---
 
-> This project is notebook-first and currently uses Python standard library imports in the transliteration code.
+## 4) Team & Institute
+
+### Team: Word Weavers
+
+| Role | Name | Branch |
+|---|---|---|
+| Team Leader | ADHIMULAM BHARGAV SAI VISWANATH | CSM |
+| Team Member | BATHULA MOHANA SRI HARI | CSM |
+| Team Member | BITRA BHAVANI | CSM |
+| Team Member | BITRA JAYA SRI | CSM |
+| Team Member | BOLAGANI BABY PRASANNA | CSM |
+| Team Member | JAGGARAPU VENKATA SAI | AI&DS |
+
+### Institution
+
+**Vasireddy Venkatadri Institute of Technology (VVIT)**  
+Department of Computer Science & Engineering (CSM)  
+SIH 2025 participating team under Problem Statement **SIH25155**.
+
+---
+
+## 5) SIH Context
+
+- **Hackathon:** Smart India Hackathon 2025
+- **Problem Statement ID:** SIH25155
+- **Title:** Transliterations tool for street signs
+- **Organization:** AICTE
+- **Theme / Bucket:** Heritage & Culture / Others
+- **Official SIH Website:** <https://sih.gov.in/>
+
+### Why It Matters
+- Better travel and navigation across states
+- Higher inclusivity for diverse language users
+- Better access for pilgrims, students, and tourists
+- Preserves local pronunciation and cultural identity
+
+---
+
+## 6) Repository Quick Access
+
+- Main Notebook: [`transliteration_algorithm.ipynb`](./transliteration_algorithm.ipynb)
+- Project Document: [`SIH_2025_Word_Weavers_Transliteration.md`](./SIH_2025_Word_Weavers_Transliteration.md)
+- SIH Supporting PDF: [`SIH25Team8058920250930052829.pdf`](./SIH25Team8058920250930052829.pdf)
+- License: [`LICENSE.md`](./LICENSE.md)
+
+---
+
+## 7) Quick Start
 
 ### Prerequisites
 - Python 3.8+
-- Jupyter Notebook or JupyterLab
+- Jupyter Notebook / JupyterLab
 
-### Local Setup
+### Run Locally
 
 ```bash
 git clone https://github.com/SIH-2025-Word-Weavers/Indian_Transliteration.git
 cd Indian_Transliteration
 python -m venv .venv
-source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 python -m pip install --upgrade pip notebook
-```
-
-## Usage
-
-### Option A: Run in Jupyter Notebook (recommended)
-
-```bash
 jupyter notebook
 ```
 
-Then open:
-- `transliteration_algorithm.ipynb`
-
-Run all cells, then:
-- Use the provided demo sample cases, or
-- Use the interactive input loop in the final cell
-
-### Option B: Run logic as a Python script (quick test)
-
-Export notebook cells as `.py` and run:
-
-```bash
-python transliteration_algorithm.py
-```
-
-(If you do not have an exported `.py`, run directly in notebook mode.)
-
-### Example Calls (from notebook functions)
-
-- Telugu -> Devanagari
-- Devanagari -> Telugu
-- Kannada -> Telugu
-- Bengali -> Devanagari
-
-The notebook includes such examples in its demo section.
-
-## Contribution Guidelines
-
-Contributions are welcome, especially for:
-- More accurate script mappings
-- Better language-specific phonetic rules
-- OCR + Script-ID integration for end-to-end signboard flow
-- Evaluation datasets and benchmarks
-- Packaging the notebook logic into modular Python files/API
-
-Suggested workflow:
-1. Fork the repo
-2. Create a feature branch
-3. Make focused changes with clear commit messages
-4. Open a pull request with test/demo evidence
-
-## License
-
-This project is licensed under the **MIT License**.
-See [`LICENSE.md`](./LICENSE.md).
-
-## Credits
-
-Developed by **Team Word Weavers** under **Smart India Hackathon 2025**.
-
-## Further Documentation / References
-
-- SIH project document in this repository:
-  - [`SIH_2025_Word_Weavers_Transliteration.md`](https://github.com/SIH-2025-Word-Weavers/Indian_Transliteration/blob/main/SIH_2025_Word_Weavers_Transliteration.md)
-- Original Google Doc reference:
-  - <https://docs.google.com/document/d/1Fmq2n86K9uBkNmv5ycIz7S0hz6U68hVjWErxddlB_Ro/edit?usp=sharing>
+Open `transliteration_algorithm.ipynb` and run all cells.
 
 ---
 
-If you want, I can next split the notebook logic into a clean Python package structure (`src/`, tests, and CLI) while keeping behavior identical.
+## 8) Roadmap / Next Steps
+
+- [ ] Strengthen script mapping quality with broader evaluation sets
+- [ ] Package notebook logic into modular Python (`src/` + CLI/API)
+- [ ] Integrate OCR + script-ID pipeline for camera input
+- [ ] Add UI rendering options (overlay/full-text modes)
+- [ ] Integrate text-to-speech for accessibility
+- [ ] Prepare mobile-first deployment path
+
+---
+
+## 9) Collaboration / Contact
+
+We welcome collaborators for:
+- Indic OCR improvements
+- Script-specific phonetic rules
+- Benchmarks and public evaluation datasets
+- Productization and mobile integration
+
+For collaboration, open an issue or pull request in this repository.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.  
+See [`LICENSE.md`](./LICENSE.md).
