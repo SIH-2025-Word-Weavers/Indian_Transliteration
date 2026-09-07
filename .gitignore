@@ -1,0 +1,22 @@
+# JADX project files
+*.jadx
+*.log
+
+# Heavy binary assets / system files
+Thumbs.db
+.DS_Store
+*.exe
+*.apk
+*.zip
+
+# Build caches and local configurations
+.gradle/
+build/
+bin/
+obj/
+*.bin
+*.properties
+
+# Ideal tracking exclusion for heavy unneeded media dependencies
+resources/res/drawable-*/
+resources/res/mipmap-*/
