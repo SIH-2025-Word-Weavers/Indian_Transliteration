@@ -23,3 +23,19 @@ resources/res/mipmap-*/
 
 # OCR validation test (local development only)
 ocr-validation-test/
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Development
+.vite/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
