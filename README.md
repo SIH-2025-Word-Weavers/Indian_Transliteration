@@ -39,6 +39,46 @@ India has many scripts, and travelers often cannot read local signboards outside
 
 ---
 
+## Current Status
+
+### What Exists Now
+
+✅ **Transliteration Logic** — Working Python notebook (`transliteration_algorithm.ipynb`)  
+✅ **Historical APK Recovered** — LipiSathi mobile app decompiled and analyzed  
+✅ **OCR Foundation Validated** — Tesseract.js with 11 Indian language models confirmed functional  
+🚧 **Clean Rebuild Planned** — Modern implementation using recovered architecture insights
+
+### Repository Structure
+
+- **`main`** — Stable, public-facing project branch
+- **`dev`** — Integration and testing branch  
+- **`feature/lipisathi-rebuild`** — Active development branch for rebuild
+- **`feature/lipisathi-recovery`** — Historical APK recovery materials (preserved)
+
+### Development Workflow
+
+```
+feature/lipisathi-rebuild
+            ↓
+           dev  (integration + testing)
+            ↓
+          main  (stable releases)
+```
+
+### Recovery Materials
+
+The recovered LipiSathi APK, decompiled source, and forensic analysis reports are preserved on the `feature/lipisathi-recovery` branch for reference.
+
+**Key Recovery Findings:**
+- Real OCR implementation (Tesseract.js + 11 language models)
+- Real transliteration (Sanscript.js, hub-and-spoke architecture)
+- Hybrid mobile app (Capacitor + React + Vite)
+- 25MB OCR assets + 16MB location database recovered
+
+See `feature/lipisathi-recovery` branch for complete recovery documentation.
+
+---
+
 ## 3) Visual Showcase
 
 ### System Flow (SIH Solution Vision)
