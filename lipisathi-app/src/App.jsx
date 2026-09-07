@@ -3,11 +3,13 @@ import styles from './App.module.css'
 import ImageUploader from './components/ImageUploader'
 import OCRResult from './components/OCRResult'
 import { runOCR } from './services/ocrService'
+import { detectScript } from './services/scriptDetectionService'
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [selectedLanguage, setSelectedLanguage] = useState('hin')
   const [ocrResult, setOcrResult] = useState(null)
+  const [detectedScript, setDetectedScript] = useState(null)
   const [isProcessing, setIsProcessing] = useState(false)
   const [ocrProgress, setOcrProgress] = useState('')
   const [error, setError] = useState(null)
@@ -15,6 +17,7 @@ function App() {
   const handleImageSelect = (imageData) => {
     setSelectedImage(imageData)
     setOcrResult(null)
+    setDetectedScript(null)
     setError(null)
   }
 
@@ -31,6 +34,7 @@ function App() {
     setIsProcessing(true)
     setOcrProgress('Starting OCR...')
     setOcrResult(null)
+    setDetectedScript(null)
     setError(null)
 
     try {
@@ -40,7 +44,11 @@ function App() {
         (message) => setOcrProgress(message)
       )
 
+      // Detect script from OCR text
+      const script = detectScript(result.text)
+
       setOcrResult(result)
+      setDetectedScript(script)
       setOcrProgress('')
     } catch (err) {
       setError(err.message || 'OCR processing failed')
@@ -60,7 +68,7 @@ function App() {
 
       <main className={styles.main}>
         <div className={styles.status}>
-          Phase 1 — Milestone 2: OCR Integration
+          Phase 1 — Milestone 3: Script Detection
         </div>
 
         <ImageUploader
@@ -83,7 +91,7 @@ function App() {
           </div>
         )}
 
-        <OCRResult result={ocrResult} />
+        <OCRResult result={ocrResult} detectedScript={detectedScript} />
       </main>
     </div>
   )

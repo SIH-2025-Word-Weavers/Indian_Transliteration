@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './OCRResult.module.css';
 
-function OCRResult({ result }) {
+function OCRResult({ result, detectedScript }) {
   const [copied, setCopied] = useState(false);
 
   if (!result) {
@@ -36,6 +36,10 @@ function OCRResult({ result }) {
         <div className={styles.stat}>
           <span className={styles.statLabel}>Characters:</span>
           <span className={styles.statValue}>{characterCount}</span>
+        </div>
+        <div className={styles.stat}>
+          <span className={styles.statLabel}>Detected Script:</span>
+          <span className={styles.statValue}>{detectedScript || '—'}</span>
         </div>
       </div>
 

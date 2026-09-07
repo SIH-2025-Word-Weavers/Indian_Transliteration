@@ -7,12 +7,13 @@
 
 ## Current Status
 
-**Phase 1 — Milestone 2: OCR Integration** ✓
+**Phase 1 — Milestone 3: Script Detection** ✓
 
 The application now supports:
 * Image upload
 * Hindi and Telugu OCR using Tesseract.js
-* Extracted text display with confidence and processing time
+* Script detection for 9 Indic scripts
+* Extracted text display with confidence, processing time, and detected script
 * Copy to clipboard functionality
 
 ---
@@ -22,6 +23,7 @@ The application now supports:
 * **React 18** — UI library
 * **Vite 5** — Build tool
 * **Tesseract.js 4.1.4** — OCR engine
+* **Script Detection** — Unicode-based Indic script detection (existing repository logic)
 * **CSS Modules** — Styling
 
 ---
@@ -41,7 +43,8 @@ lipisathi-app/
 │   │   ├── OCRResult.jsx
 │   │   └── OCRResult.module.css
 │   ├── services/
-│   │   └── ocrService.js   # Tesseract.js wrapper
+│   │   ├── ocrService.js              # Tesseract.js wrapper
+│   │   └── scriptDetectionService.js  # Script detection logic
 │   ├── App.jsx
 │   ├── App.module.css
 │   ├── main.jsx
@@ -85,19 +88,44 @@ npm run preview
 
 ---
 
-## OCR Testing
+## OCR and Script Detection Testing
 
-### Supported Languages
+### Supported OCR Languages
 
-* **Hindi (हिन्दी)** — Language code: `hin`
-* **Telugu (తెలుగు)** — Language code: `tel`
+* **Hindi (हिन्दी)** — Language code: `hin` → Detects as **Devanagari**
+* **Telugu (తెలుగు)** — Language code: `tel` → Detects as **Telugu**
+
+### Supported Script Detection (9 Indic Scripts)
+
+The script detection service can identify the following scripts based on Unicode character ranges:
+
+| Script       | Unicode Range      | Example Text      |
+|--------------|--------------------|-------------------|
+| Telugu       | U+0C00 – U+0C7F    | తెలుగు            |
+| Devanagari   | U+0900 – U+097F    | देवनागरी           |
+| Tamil        | U+0B80 – U+0BFF    | தமிழ்             |
+| Malayalam    | U+0D00 – U+0D7F    | മലയാളം            |
+| Gurmukhi     | U+0A00 – U+0A7F    | ਗੁਰਮੁਖੀ          |
+| Kannada      | U+0C80 – U+0CFF    | ಕನ್ನಡ             |
+| Bengali      | U+0980 – U+09FF    | বাংলা             |
+| Gujarati     | U+0A80 – U+0AFF    | ગુજરાતી           |
+| Odia         | U+0B00 – U+0B7F    | ଓଡ଼ିଆ              |
+
+### How Script Detection Works
+
+1. **Character Counting:** The algorithm counts characters belonging to each supported script based on Unicode ranges
+2. **Dominant Script:** Returns the script with the highest character count
+3. **Unknown Result:** If no Indic script characters are found (e.g., empty text, English, numbers, punctuation), returns "Unknown"
+4. **Mixed Scripts:** For text containing multiple scripts, returns the script with more characters
+
+**Note:** Script detection is based on the existing repository logic reproduced and verified in the React implementation. It analyzes the OCR-extracted text, so detection accuracy depends on OCR quality.
 
 ### How to Test
 
 1. Upload an image containing Hindi or Telugu text
 2. Select the appropriate language from the dropdown
 3. Click "Run OCR"
-4. View extracted text, confidence, and processing time
+4. View extracted text, confidence, processing time, and **detected script**
 5. Use "Copy Text" to copy the result to clipboard
 
 **Note:** OCR accuracy depends on image quality, text clarity, and script complexity. Real-world street-sign accuracy has not yet been systematically evaluated.
@@ -111,13 +139,15 @@ npm run preview
 * Worker properly terminates after OCR completion or error
 * Progress updates displayed during OCR processing
 * Error handling for invalid images and processing failures
+* Script detection algorithm ported from `transliteration_algorithm.ipynb`
+* Script detection runs automatically after successful OCR
+* Supports 9 Indic scripts; returns "Unknown" for non-Indic text
 
 ---
 
 ## Next Milestones
 
-* **Milestone 3:** Script Detection
-* **Milestone 4:** Transliteration
+* **Milestone 4:** Transliteration (use detected script to drive transliteration)
 * **Milestone 5:** End-to-end UI Integration
 
 Future enhancements:
