@@ -20,3 +20,6 @@ obj/
 # Ideal tracking exclusion for heavy unneeded media dependencies
 resources/res/drawable-*/
 resources/res/mipmap-*/
+
+# OCR validation test (local development only)
+ocr-validation-test/
