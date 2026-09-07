@@ -108,6 +108,7 @@ SIH 2025 participating team under Problem Statement **SIH25155**.
 - Project Document: [`SIH_2025_Word_Weavers_Transliteration.md`](./SIH_2025_Word_Weavers_Transliteration.md)
 - SIH Supporting PDF: [`SIH25Team8058920250930052829.pdf`](./SIH25Team8058920250930052829.pdf)
 - License: [`LICENSE.md`](./LICENSE.md)
+- Documentation: ['Google Docs'](https://docs.google.com/document/d/1Fmq2n86K9uBkNmv5ycIz7S0hz6U68hVjWErxddlB_Ro/edit?usp=sharing)
 
 ---
 
