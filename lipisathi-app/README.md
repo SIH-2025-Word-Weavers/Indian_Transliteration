@@ -7,14 +7,18 @@
 
 ## Current Status
 
-**Phase 1 — Milestone 4: Transliteration** ✓
+**Phase 1 — Milestone 5: Testing, Language Rules, and Validation** ✓
 
 The application now supports:
 * Image upload
 * Hindi and Telugu OCR using Tesseract.js
 * Script detection for 9 Indic scripts
 * Transliteration between 9 Indic scripts using hub-and-spoke architecture
+* Hindi language-specific post-processing rules (Schwa deletion, ळ→ल)
+* Comprehensive automated testing (Vitest)
 * Extracted text and transliteration display with copy to clipboard functionality
+
+**Real-world street-sign validation is pending.**
 
 ---
 
@@ -23,8 +27,10 @@ The application now supports:
 * **React 18** — UI library
 * **Vite 5** — Build tool
 * **Tesseract.js 4.1.4** — OCR engine
-* **Script Detection** — Unicode-based Indic script detection (existing repository logic)
-* **Transliteration** — Hub-and-spoke architecture via Devanagari (existing repository logic)
+* **Script Detection** — Unicode-based Indic script detection (ported from `transliteration_algorithm.ipynb`)
+* **Transliteration** — Hub-and-spoke architecture via Devanagari (ported from `transliteration_algorithm.ipynb`)
+* **Language Rules** — Hindi-specific post-processing (ported from `transliteration_algorithm.ipynb`)
+* **Vitest** — Testing framework
 * **CSS Modules** — Styling
 
 ---
@@ -34,9 +40,7 @@ The application now supports:
 ```
 lipisathi-app/
 ├── public/
-│   └── tessdata/           # OCR language models
-│       ├── hin.traineddata # Hindi (1.1MB)
-│       └── tel.traineddata # Telugu (2.6MB)
+│   └── tessdata/           # OCR language models (currently CDN-hosted)
 ├── src/
 │   ├── components/
 │   │   ├── ImageUploader.jsx
@@ -44,14 +48,20 @@ lipisathi-app/
 │   │   ├── OCRResult.jsx
 │   │   └── OCRResult.module.css
 │   ├── services/
-│   │   ├── ocrService.js                 # Tesseract.js wrapper
-│   │   ├── scriptDetectionService.js     # Script detection logic
-│   │   └── transliterationService.js     # Transliteration engine
+│   │   ├── ocrService.js                   # Tesseract.js wrapper
+│   │   ├── scriptDetectionService.js       # Script detection logic
+│   │   ├── scriptDetectionService.test.js  # Script detection tests
+│   │   ├── transliterationService.js       # Transliteration engine
+│   │   └── transliterationService.test.js  # Transliteration tests
 │   ├── App.jsx
 │   ├── App.module.css
 │   ├── main.jsx
 │   └── styles/
 │       └── global.css
+├── tests/
+│   ├── integration.test.js      # OCR → Script → Transliteration pipeline tests
+│   └── notebook-parity.md       # Notebook parity test case documentation
+├── vitest.config.js
 └── ...
 ```
 
@@ -73,6 +83,13 @@ npm run dev
 ```
 
 Open browser to `http://localhost:5173`
+
+### Run Tests
+
+```bash
+npm test           # Run tests in watch mode
+npm run test:run   # Run tests once
+```
 
 ### Build for Production
 
@@ -195,51 +212,120 @@ The transliteration service includes an exception dictionary for handling loanwo
 
 Additional exceptions can be added to the transliteration service as needed.
 
+### Language-Specific Post-Processing Rules
+
+The transliteration service includes optional language-specific rules for improved orthographic accuracy:
+
+#### Hindi Rules
+
+1. **Schwa Deletion:** For words ending in Devanagari consonants (U+0915–U+0939), appends virama `्` (halant). Example: `राम` → `राम्`
+2. **Character Standardization:** Replaces `ळ` with `ल` for standard Hindi orthography.
+
+**Note:** These are simple heuristics ported from the reference notebook, not a complete linguistic model.
+
+To apply Hindi rules, the transliteration service must be called with `targetLanguage="Hindi"`. The UI does not currently expose language selection; rules are applied at the service level and verified by automated tests.
+
+#### Other Languages
+
+Rules for other languages (Marathi, Tamil, etc.) are not currently implemented. Additional rules can be added following the same pattern as Hindi.
+
+---
+
 ### Transliteration Limitations
 
-1. **Character-Level Mapping:** The algorithm performs character-by-character mapping and does not account for phonological or contextual rules.
+1. **Character-Level Mapping:** The algorithm performs character-by-character mapping and does not account for complex phonological or contextual rules.
 
 2. **Tamil Approximations:** Tamil lacks aspirated consonants; approximations are used when transliterating to/from Tamil.
 
-3. **No Linguistic Post-Processing:** The implementation does not include language-specific rules (e.g., Hindi schwa deletion) in this milestone.
+3. **Limited Linguistic Post-Processing:** Only Hindi rules are currently implemented. Language-specific rules for other scripts are not yet included.
 
 4. **OCR Dependency:** Transliteration quality depends on OCR accuracy. Poor OCR results will produce poor transliterations.
 
-5. **Not Production-Ready:** This is a character-mapping implementation based on existing repository logic. Linguistic accuracy has not been systematically evaluated.
+5. **Not Production-Ready:** This is a character-mapping implementation based on the reference notebook logic. Real-world linguistic accuracy has not been systematically evaluated.
 
 6. **English Not Supported:** The algorithm does not support English as a source or target script.
 
 ---
 
+## Testing
+
+The LipiSathi rebuild includes comprehensive automated testing to verify functional correctness:
+
+### Test Coverage
+
+* **Transliteration Service Tests:** 70+ test cases covering basic transliteration, edge cases, exception dictionary, and Hindi language rules
+* **Script Detection Tests:** 30+ test cases covering all 9 supported scripts, edge cases, mixed text, and Unicode boundaries
+* **Integration Tests:** 30+ test cases verifying the complete OCR → Script Detection → Transliteration pipeline
+* **Notebook Parity:** Documented test cases verifying JavaScript behavior matches the reference notebook (`transliteration_algorithm.ipynb`)
+
+### Running Tests
+
+```bash
+npm test           # Watch mode (interactive)
+npm run test:run   # Run once and exit
+```
+
+### Test Philosophy
+
+Tests prioritize **meaningful behavior coverage** over arbitrary coverage metrics. All tests verify actual functionality against the reference notebook implementation.
+
+**What is tested:**
+- Core transliteration logic (hub-and-spoke)
+- Script detection accuracy
+- Hindi language-specific rules
+- Exception dictionary
+- Edge cases (empty input, whitespace, numbers, punctuation, mixed text)
+- Integration pipeline (mocked OCR text)
+
+**What is NOT tested:**
+- Actual OCR model accuracy (requires real-world images)
+- Browser-specific rendering
+- End-to-end browser automation
+
+---
+
 ## Implementation Notes
 
-* OCR models recovered from `feature/lipisathi-recovery` branch
-* Tesseract.js v4.1.4 API verified during implementation
-* Worker properly terminates after OCR completion or error
-* Progress updates displayed during OCR processing
-* Error handling for invalid images and processing failures
-* Script detection algorithm ported from `transliteration_algorithm.ipynb`
-* Script detection runs automatically after successful OCR
-* Supports 9 Indic scripts; returns "Unknown" for non-Indic text
-* Transliteration algorithm ported from `transliteration_algorithm.ipynb`
-* Hub-and-spoke architecture with Devanagari as central hub
-* Character mappings for 8 scripts (Telugu, Tamil, Kannada, Malayalam, Gurmukhi, Bengali, Gujarati, Odia)
-* Exception dictionary for handling loanwords and proper nouns
+### Current Rebuild (M1–M5)
+
+* **OCR:** Tesseract.js v4.1.4 with Hindi and Telugu language models (CDN-hosted)
+* **Script Detection:** Ported from `transliteration_algorithm.ipynb`, supports 9 Indic scripts
+* **Transliteration:** Hub-and-spoke architecture (Devanagari as hub), ported from `transliteration_algorithm.ipynb`
+* **Language Rules:** Hindi-specific post-processing (Schwa deletion, ळ→ल), ported from `transliteration_algorithm.ipynb`
+* **Testing:** Vitest with comprehensive unit, integration, and notebook parity tests
+* **UI:** React-based with image upload, OCR, script detection, and transliteration display
+* Worker termination, progress updates, error handling for OCR
+* Exception dictionary for loanwords (lipisathi, google)
 * Preserves whitespace, punctuation, and unmapped characters
+
+### Historical LipiSathi (Recovered APK)
+
+The original LipiSathi application (recovered from `feature/lipisathi-recovery` branch) included:
+* 11 OCR language models (Hindi, Telugu, Tamil, Malayalam, Kannada, Bengali, Gujarati, Marathi, Punjabi, Odia, English)
+* Capacitor-based hybrid mobile app
+* Camera integration
+* Google TTS integration
+* Sanscript.js for transliteration
+
+**These features are NOT yet integrated into the current rebuild.** The current rebuild focuses on core transliteration correctness and automated testing first.
 
 ---
 
 ## Next Milestones
 
-* **Milestone 5:** Enhanced UI/UX and Language-Specific Post-Processing
-* **Milestone 6:** Camera Integration and Real-Time Processing
+* **Milestone 6:** Real-World Street-Sign Validation
+* **Milestone 7:** Additional OCR Languages (Tamil, Malayalam, Kannada, etc.)
+* **Milestone 8:** Camera Integration and Real-Time Processing
 
 Future enhancements:
-* Additional OCR languages
+* Real-world image dataset validation
+* Additional OCR languages (Tamil, Malayalam, Kannada, Bengali, Gujarati, Marathi, Punjabi, Odia, English)
 * Camera integration
 * Image preprocessing
 * Batch processing
 * PWA/offline support
+* Text-to-Speech (TTS)
+* Mobile packaging (Capacitor)
 
 ---
 

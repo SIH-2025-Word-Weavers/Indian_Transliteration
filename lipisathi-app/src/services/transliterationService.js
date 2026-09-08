@@ -59,7 +59,7 @@ const MAPPINGS_TO_DEVANAGARI = {
     "க": "क", "ங": "ङ", "ச": "च", "ஜ": "ज", "ஞ": "ञ",
     "ட": "ट", "ண": "ण", "த": "त", "ந": "न", "ன": "न",
     "ப": "प", "ம": "म", "ய": "य", "ர": "र", "ற": "र",
-    "ல": "ल", "ள": "ळ", "வ": "వ", "ழ": "ळ",
+    "ல": "ल", "ள": "ळ", "வ": "व", "ழ": "ळ",
     "ஶ": "श", "ஷ": "ष", "ஸ": "स", "ஹ": "ह",
     // Vowel signs
     "ா": "ा", "ி": "ि", "ீ": "ी", "ு": "ु", "ூ": "ू",
@@ -81,7 +81,7 @@ const MAPPINGS_TO_DEVANAGARI = {
     "ಟ": "ट", "ಠ": "ठ", "ಡ": "ड", "ಢ": "ढ", "ಣ": "ण",
     "ತ": "त", "ಥ": "थ", "ದ": "द", "ಧ": "ध", "ನ": "न",
     "ಪ": "प", "ಫ": "फ", "ಬ": "ब", "ಭ": "भ", "ಮ": "म",
-    "ಯ": "य", "ರ": "र", "ಲ": "ल", "ವ": "వ",
+    "ಯ": "य", "ರ": "र", "ಲ": "ल", "ವ": "व",
     "ಶ": "श", "ಷ": "ष", "ಸ": "स", "ಹ": "ह", "ಳ": "ळ",
     // Vowel signs
     "ಾ": "ा", "ಿ": "ि", "ೀ": "ी", "ು": "ु", "ೂ": "ू", "ೃ": "ृ",
@@ -104,7 +104,7 @@ const MAPPINGS_TO_DEVANAGARI = {
     "ട": "ट", "ഠ": "ठ", "ഡ": "ड", "ഢ": "ढ", "ണ": "ण",
     "ത": "त", "ഥ": "थ", "ദ": "द", "ധ": "ध", "ന": "न",
     "പ": "प", "ഫ": "फ", "ബ": "ब", "ഭ": "भ", "മ": "म",
-    "യ": "य", "ര": "र", "ല": "ल", "വ": "వ",
+    "യ": "य", "ര": "र", "ല": "ല", "വ": "व",
     "ശ": "श", "ഷ": "ष", "സ": "स", "ഹ": "ह", "ള": "ळ", "ഴ": "ळ", "റ": "र",
     // Vowel signs
     "ാ": "ा", "ി": "ि", "ീ": "ी", "ു": "ु", "ൂ": "ू", "ൃ": "ृ",
@@ -253,15 +253,58 @@ function generateReverseMappings() {
 generateReverseMappings();
 
 /**
+ * Apply language-specific orthographic rules to transliterated text
+ * Based on transliteration_algorithm.ipynb apply_language_rules() function
+ * 
+ * NOTE: This is a simple heuristic from the notebook, not a complete linguistic model.
+ * Only Hindi rules are currently implemented.
+ * 
+ * @param {string} text - Text to process
+ * @param {string} language - Target language for rules (e.g., "Hindi")
+ * @returns {string} Text with language-specific rules applied
+ */
+function applyLanguageRules(text, language) {
+  if (language === 'Hindi') {
+    // Rule 1: Schwa Deletion at the end of words
+    // For each space-separated word, if it ends with a Devanagari consonant (U+0915-U+0939),
+    // append virama (halant) '्'
+    // Example: "राम" → "राम्"
+    // NOTE: Only applies to words with more than one character
+    const words = text.split(' ');
+    const processedWords = words.map(word => {
+      if (word && word.length > 1) {  // Changed from > 0 to > 1
+        const lastCharCode = word.charCodeAt(word.length - 1);
+        // Check if last character is a Devanagari consonant (U+0915-U+0939)
+        if (lastCharCode >= 0x0915 && lastCharCode <= 0x0939) {
+          return word + '्'; // Append virama
+        }
+      }
+      return word;
+    });
+    text = processedWords.join(' ');
+
+    // Rule 2: Heuristic for common character replacements
+    // Prefer 'ल' over 'ळ' in standard Hindi
+    text = text.replace(/ळ/g, 'ल');
+  }
+
+  // Other languages can be added here (e.g., if (language === 'Marathi') {...})
+  // Currently only Hindi is implemented in the notebook
+  
+  return text;
+}
+
+/**
  * Transliterate text from source script to target script
  * Based on transliteration_algorithm.ipynb transliterate() function
  * 
  * @param {string} text - Text to transliterate
  * @param {string} targetScript - Target script name (e.g., "Telugu", "Tamil")
  * @param {string} sourceScript - Source script name (auto-detected if not provided)
+ * @param {string} [targetLanguage] - Optional language for post-processing rules (e.g., "Hindi")
  * @returns {string} Transliterated text or error message
  */
-export function transliterate(text, targetScript, sourceScript) {
+export function transliterate(text, targetScript, sourceScript, targetLanguage = null) {
   // Validate input
   if (!text || typeof text !== 'string') {
     return '';
@@ -282,8 +325,8 @@ export function transliterate(text, targetScript, sourceScript) {
     return '❌ Could not detect script';
   }
 
-  // If source and target are the same, return original text
-  if (sourceScript === targetScript) {
+  // If source and target are the same AND no language rules requested, return original text
+  if (sourceScript === targetScript && !targetLanguage) {
     return text;
   }
 
@@ -307,6 +350,11 @@ export function transliterate(text, targetScript, sourceScript) {
     
     const mapping = MAPPINGS_FROM_DEVANAGARI[targetScript];
     resultText = devanagariText.split('').map(char => mapping[char] || char).join('');
+  }
+
+  // Step C: Apply language-specific post-processing rules (if targetLanguage provided)
+  if (targetLanguage) {
+    resultText = applyLanguageRules(resultText, targetLanguage);
   }
 
   return resultText;
