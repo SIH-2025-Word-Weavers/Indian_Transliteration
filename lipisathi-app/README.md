@@ -7,7 +7,8 @@
 
 ## Current Status
 
-**Phase 1 — Milestone 5: Testing, Language Rules, and Validation** ✓
+**Phase 1 — Milestone 5: Testing, Language Rules, and Validation** ✓  
+**Phase 2 — Milestone 6: Real-World Validation** 🚧 (In Progress)
 
 The application now supports:
 * Image upload
@@ -18,7 +19,7 @@ The application now supports:
 * Comprehensive automated testing (Vitest)
 * Extracted text and transliteration display with copy to clipboard functionality
 
-**Real-world street-sign validation is pending.**
+**Real-world street-sign validation (M6) is in progress — dataset acquisition phase.**
 
 ---
 
@@ -284,6 +285,38 @@ Tests prioritize **meaningful behavior coverage** over arbitrary coverage metric
 
 ---
 
+## Real-World Validation
+
+**Milestone 6 (M6)** focuses on representative real-world validation using actual street-sign images.
+
+### Validation Scope
+
+- **OCR Languages:** Hindi and Telugu (currently supported in M2)
+- **Dataset Size:** ~16 images (8 Hindi + 8 Telugu)
+- **Methodology:** Manual validation using existing UI
+- **Purpose:** Observe actual behavior, identify limitations, establish baseline
+
+### Validation Documentation
+
+See [`validation/README.md`](validation/README.md) for:
+- Complete validation methodology
+- Dataset organization and metadata requirements
+- Result-recording procedures
+- Image licensing requirements
+- Honest interpretation guidelines
+
+### Current Status
+
+**M6 Phase 1:** ✅ Validation structure and documentation complete  
+**M6 Phase 2:** 🚧 Dataset acquisition in progress  
+**M6 Phase 3:** ⏳ Pending — Actual validation with images  
+
+**Results:** To be recorded after dataset acquisition and validation testing
+
+**Important:** M6 is a representative real-world validation on a small dataset, NOT a comprehensive evaluation or production benchmark.
+
+---
+
 ## Implementation Notes
 
 ### Current Rebuild (M1–M5)
@@ -313,7 +346,7 @@ The original LipiSathi application (recovered from `feature/lipisathi-recovery` 
 
 ## Next Milestones
 
-* **Milestone 6:** Real-World Street-Sign Validation
+* **Milestone 6:** Real-World Street-Sign Validation 🚧 (In Progress — dataset acquisition)
 * **Milestone 7:** Additional OCR Languages (Tamil, Malayalam, Kannada, etc.)
 * **Milestone 8:** Camera Integration and Real-Time Processing
 

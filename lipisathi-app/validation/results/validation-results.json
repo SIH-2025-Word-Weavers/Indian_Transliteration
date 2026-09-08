@@ -1,0 +1,192 @@
+{
+  "validation_metadata": {
+    "validation_date": "2026-09-08T16:16:58.342Z",
+    "validation_type": "service_layer_only",
+    "dataset_info": {
+      "total_images": 12,
+      "hindi_images": 8,
+      "telugu_images": 4,
+      "dataset_source": "Wikimedia Commons"
+    },
+    "services_validated": {
+      "script_detection": "src/services/scriptDetectionService.js — ✓ Validated",
+      "transliteration": "src/services/transliterationService.js — ✓ Validated",
+      "ocr": "src/services/ocrService.js (Tesseract.js) — ✗ Not validated (requires browser)"
+    },
+    "ui_validation": false,
+    "application_code_modified": false,
+    "limitations": [
+      "OCR validation requires browser environment (Web Workers, DOM, SSL)",
+      "Node.js execution of Tesseract.js fails with SSL and Worker API issues",
+      "Only script detection and transliteration services validated",
+      "No actual OCR performed on the 12 street-sign images",
+      "Full pipeline validation requires manual browser/UI testing"
+    ]
+  },
+  "service_tests": {
+    "test_cases": [
+      {
+        "test_name": "Hindi Sample",
+        "input_text": "नमस्ते दिल्ली रेलवे स्टेशन",
+        "expected_script": "Devanagari",
+        "detected_script": "Devanagari",
+        "script_detection_correct": true,
+        "transliteration": {
+          "target_script": "Telugu",
+          "output": "నమస్తే దిల్లీ రేలవే స్టేశన",
+          "output_length": 26,
+          "status": "success"
+        }
+      },
+      {
+        "test_name": "Telugu Sample",
+        "input_text": "హైదరాబాద్ మెట్రో స్టేషన్",
+        "expected_script": "Telugu",
+        "detected_script": "Telugu",
+        "script_detection_correct": true,
+        "transliteration": {
+          "target_script": "Devanagari",
+          "output": "हैदराबाद् मెट्रो स्टेषन्",
+          "output_length": 24,
+          "status": "success"
+        }
+      },
+      {
+        "test_name": "Mixed Hindi-English",
+        "input_text": "Delhi Metro दिल्ली मेट्रो",
+        "expected_script": "Devanagari",
+        "detected_script": "Devanagari",
+        "script_detection_correct": true,
+        "transliteration": {
+          "target_script": "Telugu",
+          "output": "Delhi Metro దిల్లీ మేట్రో",
+          "output_length": 25,
+          "status": "success"
+        }
+      },
+      {
+        "test_name": "Empty Text",
+        "input_text": "",
+        "expected_script": "Unknown",
+        "detected_script": "Unknown",
+        "script_detection_correct": true,
+        "transliteration": null
+      }
+    ],
+    "summary": {
+      "total_tests": 4,
+      "script_detection_correct": 4,
+      "transliteration_succeeded": 3
+    }
+  },
+  "images": [
+    {
+      "id": "hindi_01",
+      "filename": "hindi_01.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "clear_front_facing",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_02",
+      "filename": "hindi_02.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "road_sign_perspective",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_03",
+      "filename": "hindi_03.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "railway_station_clear",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_04",
+      "filename": "hindi_04.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "metro_vertical_sign",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_05",
+      "filename": "hindi_05.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "railway_wide_angle",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_06",
+      "filename": "hindi_06.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "junction_signboard",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_07",
+      "filename": "hindi_07.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "metro_indoor_lighting",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "hindi_08",
+      "filename": "hindi_08.jpg",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "condition_category": "street_sign_natural",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "telugu_01",
+      "filename": "telugu_01.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "condition_category": "highway_sign_clear",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "telugu_02",
+      "filename": "telugu_02.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "condition_category": "metro_warning_notice",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "telugu_03",
+      "filename": "telugu_03.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "condition_category": "metro_information_board",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    },
+    {
+      "id": "telugu_04",
+      "filename": "telugu_04.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "condition_category": "highway_rural_road",
+      "validation_status": "not_validated",
+      "reason": "OCR requires browser environment - programmatic validation not possible in Node.js"
+    }
+  ]
+}

@@ -46,7 +46,8 @@ India has many scripts, and travelers often cannot read local signboards outside
 ✅ **Transliteration Logic** — Working Python notebook (`transliteration_algorithm.ipynb`)  
 ✅ **Historical APK Recovered** — LipiSathi mobile app decompiled and analyzed  
 ✅ **OCR Foundation Validated** — Tesseract.js with 11 Indian language models confirmed functional  
-🚧 **Clean Rebuild Planned** — Modern implementation using recovered architecture insights
+✅ **Clean Rebuild (M1-M5)** — React application with Hindi/Telugu OCR, script detection, transliteration, automated tests  
+🚧 **Real-World Validation (M6)** — In progress: dataset acquisition for street-sign validation
 
 ### Repository Structure
 
