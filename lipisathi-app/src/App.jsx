@@ -4,12 +4,15 @@ import ImageUploader from './components/ImageUploader'
 import OCRResult from './components/OCRResult'
 import { runOCR } from './services/ocrService'
 import { detectScript } from './services/scriptDetectionService'
+import { transliterate, getSupportedScripts } from './services/transliterationService'
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [selectedLanguage, setSelectedLanguage] = useState('hin')
   const [ocrResult, setOcrResult] = useState(null)
   const [detectedScript, setDetectedScript] = useState(null)
+  const [targetScript, setTargetScript] = useState(null)
+  const [transliterationResult, setTransliterationResult] = useState(null)
   const [isProcessing, setIsProcessing] = useState(false)
   const [ocrProgress, setOcrProgress] = useState('')
   const [error, setError] = useState(null)
@@ -18,6 +21,8 @@ function App() {
     setSelectedImage(imageData)
     setOcrResult(null)
     setDetectedScript(null)
+    setTargetScript(null)
+    setTransliterationResult(null)
     setError(null)
   }
 
@@ -35,6 +40,8 @@ function App() {
     setOcrProgress('Starting OCR...')
     setOcrResult(null)
     setDetectedScript(null)
+    setTargetScript(null)
+    setTransliterationResult(null)
     setError(null)
 
     try {
@@ -58,6 +65,25 @@ function App() {
     }
   }
 
+  const handleTransliterate = (selectedTargetScript) => {
+    if (!ocrResult || !detectedScript || detectedScript === 'Unknown') {
+      return
+    }
+
+    setTargetScript(selectedTargetScript)
+    
+    try {
+      const result = transliterate(
+        ocrResult.text,
+        selectedTargetScript,
+        detectedScript
+      )
+      setTransliterationResult(result)
+    } catch (err) {
+      setTransliterationResult(`❌ Transliteration failed: ${err.message}`)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -68,7 +94,7 @@ function App() {
 
       <main className={styles.main}>
         <div className={styles.status}>
-          Phase 1 — Milestone 3: Script Detection
+          Phase 1 — Milestone 4: Transliteration
         </div>
 
         <ImageUploader
@@ -91,7 +117,14 @@ function App() {
           </div>
         )}
 
-        <OCRResult result={ocrResult} detectedScript={detectedScript} />
+        <OCRResult 
+          result={ocrResult} 
+          detectedScript={detectedScript}
+          targetScript={targetScript}
+          transliterationResult={transliterationResult}
+          onTransliterate={handleTransliterate}
+          supportedScripts={getSupportedScripts()}
+        />
       </main>
     </div>
   )
