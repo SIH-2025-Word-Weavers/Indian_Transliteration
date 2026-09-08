@@ -1,0 +1,13 @@
+{
+  "phase": "M7 Phase 1",
+  "image_id": "hindi_01",
+  "filename": "hindi_01.jpg",
+  "language": "Hindi",
+  "ocr_status": "success",
+  "ocr_text": "न कप स्नम्य रेलिंग से दूरी बनाये रखें * है\n\"| 009: ॥78000 00000 न",
+  "ocr_confidence": "38.0%",
+  "ocr_processing_time": "3.97s",
+  "detected_script": "Devanagari",
+  "error": null,
+  "timestamp": "2026-09-08T16:51:48.128Z"
+}
