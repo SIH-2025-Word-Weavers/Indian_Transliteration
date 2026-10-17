@@ -1,0 +1,18 @@
+{
+  "description": "M8 Phase 4 'sign_crop' condition. Each box [x, y, width, height] in ORIGINAL image pixel coordinates, chosen by visual inspection to contain the physical sign panel that carries the target-language text, with a small margin. Boxes were fixed BEFORE any preprocessing OCR was run and were not tuned against OCR output. The crop removes surrounding scene clutter only; it does NOT remove English text printed on the same sign.",
+  "coordinate_system": "pixels of the 1600px-wide dataset images (see dataset-index.json processed_resolution)",
+  "regions": {
+    "hindi_01": { "box": [80, 320, 1445, 500], "note": "Whole sign board" },
+    "hindi_02": { "box": [180, 80, 1240, 840], "note": "Green direction panel" },
+    "hindi_03": { "box": [350, 180, 930, 940], "note": "Diamond station sign" },
+    "hindi_04": { "box": [0, 0, 760, 700], "note": "Upper station name sign (image is 760x1600 portrait)" },
+    "hindi_05": { "box": [90, 150, 1235, 580], "note": "Yellow station board" },
+    "hindi_06": { "box": [0, 90, 1600, 590], "note": "Yellow station board" },
+    "hindi_07": { "box": [0, 80, 1600, 830], "note": "White notice board" },
+    "hindi_08": { "box": [40, 30, 1520, 915], "note": "Yellow notice board" },
+    "telugu_01": { "box": [90, 410, 300, 225], "note": "Small highway direction sign (low pixel count)" },
+    "telugu_02": { "box": [0, 0, 1600, 1009], "note": "Sign fills the whole frame; crop equals full image" },
+    "telugu_03": { "box": [20, 145, 565, 680], "note": "Green Senior Citizens Coach panel and frame" },
+    "telugu_04": { "box": [275, 555, 190, 215], "note": "Small highway direction sign (low pixel count)" }
+  }
+}

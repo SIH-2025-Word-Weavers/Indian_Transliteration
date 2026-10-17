@@ -411,18 +411,17 @@ Results may not apply to:
   - Updated validation results
 
 #### M8 Phase 4: Preprocessing Implementation
-- **Status:** ⚪ Not Started
-- **Deliverables:**
-  - Preprocessing utilities (grayscale, contrast, threshold, etc.)
-  - Browser-based or Node.js implementation
-  - Batch processing script
+- **Status:** 🟡 Partially complete (first round: grayscale, contrast stretch, 2x upscale)
+- **Done:** Browser-canvas preprocessing inside the Playwright spec (`scripts/m8-preprocessing-ocr.spec.js`), no new dependencies and no app changes. Two conditions: whole image and manual sign crop (`metadata/sign-crop-regions.json`).
+- **Not done:** thresholding (Otsu/adaptive), denoising, deskew, sharpening, and any production preprocessing code in `src/`.
 
 #### M8 Phase 5: Preprocessing Experiments
-- **Status:** ⚪ Not Started
-- **Deliverables:**
-  - OCR results for all preprocessing methods
-  - CER/WER for all method × image combinations
-  - Structured experiment results (JSON + MD)
+- **Status:** 🟡 First round complete (8 variants x 12 images = 96 runs); see `results/M8-phase4-preprocessing-results.md`
+- **Deliverables done:**
+  - OCR text for every variant x image (`results/M8-phase4-ocr-runs.json`)
+  - CER/WER per variant, per image, per language (`results/M8-phase4-preprocessing-results.json` and `.md`)
+  - Control: untouched re-run reproduces stored M7 OCR text for 12/12 images
+- **Open:** remaining methods above; sign-only ground truth; automatic text-region detection (the crop here is manual).
 
 #### M8 Phase 6: Analysis & Recommendations
 - **Status:** ⚪ Not Started
@@ -555,7 +554,7 @@ Based on OCR literature and M7 baseline confidence (18-54%):
 
 **Version:** 1.0  
 **Created:** 2026-09-08  
-**Status:** M8 Phases 1-3 complete (design, ground truth, baseline CER/WER)  
-**Next Step:** M8 Phase 4 - Preprocessing implementation
+**Status:** M8 Phases 1-3 complete; Phases 4-5 first round complete (grayscale, contrast, 2x upscale; whole image vs manual sign crop)  
+**Next Step:** Decide whether to continue (more methods, sign-only ground truth, text-region detection) or stop M8 and write the Phase 6 summary
 
 **Last Updated:** 2026-10-17
