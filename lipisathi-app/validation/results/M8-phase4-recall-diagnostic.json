@@ -1,0 +1,166 @@
+{
+  "phase": "M8 Phase 6 - word recall diagnostic",
+  "note": "Multiset of reference words found anywhere in the OCR output. Rewards emitting more text; read with OCR chars emitted. Not accuracy.",
+  "variants": [
+    {
+      "id": "full__original",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 39,
+        "word_recall": 0.541667
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 26,
+        "word_recall": 0.619048
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 13,
+        "word_recall": 0.433333
+      },
+      "ocr_chars_emitted": 4360,
+      "corpus_CER": 9.110092
+    },
+    {
+      "id": "full__grayscale",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 35,
+        "word_recall": 0.486111
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 21,
+        "word_recall": 0.5
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 14,
+        "word_recall": 0.466667
+      },
+      "ocr_chars_emitted": 3608,
+      "corpus_CER": 7.454128
+    },
+    {
+      "id": "full__contrast_stretch",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 33,
+        "word_recall": 0.458333
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 19,
+        "word_recall": 0.452381
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 14,
+        "word_recall": 0.466667
+      },
+      "ocr_chars_emitted": 3174,
+      "corpus_CER": 6.470183
+    },
+    {
+      "id": "full__upscale2x",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 27,
+        "word_recall": 0.375
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 14,
+        "word_recall": 0.333333
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 13,
+        "word_recall": 0.433333
+      },
+      "ocr_chars_emitted": 9533,
+      "corpus_CER": 21.087156
+    },
+    {
+      "id": "sign_crop__original",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 40,
+        "word_recall": 0.555556
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 27,
+        "word_recall": 0.642857
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 13,
+        "word_recall": 0.433333
+      },
+      "ocr_chars_emitted": 1363,
+      "corpus_CER": 2.284404
+    },
+    {
+      "id": "sign_crop__grayscale",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 39,
+        "word_recall": 0.541667
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 25,
+        "word_recall": 0.595238
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 14,
+        "word_recall": 0.466667
+      },
+      "ocr_chars_emitted": 1104,
+      "corpus_CER": 1.722477
+    },
+    {
+      "id": "sign_crop__contrast_stretch",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 40,
+        "word_recall": 0.555556
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 25,
+        "word_recall": 0.595238
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 15,
+        "word_recall": 0.5
+      },
+      "ocr_chars_emitted": 1198,
+      "corpus_CER": 1.931193
+    },
+    {
+      "id": "sign_crop__upscale2x",
+      "overall": {
+        "reference_words": 72,
+        "reference_words_found": 40,
+        "word_recall": 0.555556
+      },
+      "Hindi": {
+        "reference_words": 42,
+        "reference_words_found": 27,
+        "word_recall": 0.642857
+      },
+      "Telugu": {
+        "reference_words": 30,
+        "reference_words_found": 13,
+        "word_recall": 0.433333
+      },
+      "ocr_chars_emitted": 2699,
+      "corpus_CER": 5.350917
+    }
+  ]
+}

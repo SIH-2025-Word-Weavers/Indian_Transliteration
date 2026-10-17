@@ -424,12 +424,13 @@ Results may not apply to:
 - **Open:** remaining methods above; sign-only ground truth; automatic text-region detection (the crop here is manual).
 
 #### M8 Phase 6: Analysis & Recommendations
-- **Status:** ⚪ Not Started
+- **Status:** Complete for the first round (see `results/M8-phase6-analysis.md`)
+- **Outcome:** No tested preprocessing (grayscale, contrast stretch, 2x upscale) showed a demonstrated recognition gain on this 12-image set. Cropping to the sign lowers CER/WER mainly by removing clutter. Recommendation: no production preprocessing change on this evidence; investigate sign isolation next with sign-only ground truth and more images.
 - **Deliverables:**
-  - Comparative analysis report
-  - Best-performing method identification
-  - Recommendations for production OCR configuration
-  - Documented limitations and caveats
+  - Comparative analysis report (done)
+  - Best-performing method identification (done, with the caveat that CER/WER and word recall disagree)
+  - Recommendations for production OCR configuration (done)
+  - Documented limitations and caveats (done)
 
 ---
 
@@ -554,7 +555,7 @@ Based on OCR literature and M7 baseline confidence (18-54%):
 
 **Version:** 1.0  
 **Created:** 2026-09-08  
-**Status:** M8 Phases 1-3 complete; Phases 4-5 first round complete (grayscale, contrast, 2x upscale; whole image vs manual sign crop)  
-**Next Step:** Decide whether to continue (more methods, sign-only ground truth, text-region detection) or stop M8 and write the Phase 6 summary
+**Status:** M8 first round complete (Phases 1-6): ground truth, baseline, grayscale/contrast/2x upscale on whole image vs manual sign crop, analysis  
+**Next Step:** Optional follow-up outside this round: sign-only ground truth, more images, sign isolation (user crop or text-region detection), untested preprocessing methods
 
 **Last Updated:** 2026-10-17
