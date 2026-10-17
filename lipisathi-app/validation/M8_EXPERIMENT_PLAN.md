@@ -556,6 +556,7 @@ Based on OCR literature and M7 baseline confidence (18-54%):
 **Version:** 1.0  
 **Created:** 2026-09-08  
 **Status:** M8 first round complete (Phases 1-6): ground truth, baseline, grayscale/contrast/2x upscale on whole image vs manual sign crop, analysis  
-**Next Step:** Optional follow-up outside this round: sign-only ground truth, more images, sign isolation (user crop or text-region detection), untested preprocessing methods
+**Follow-up done:** script-filtered CER/WER on existing OCR output (`results/M8-followup-analysis.md`). The ground truth was already target-script-only, so no new ground truth was needed for the 12 images.  
+**Next Step:** Needs new data from the project owner: 30-50 verified real sign photos (see section 5 of `results/M8-followup-analysis.md`). After that: sign isolation (user crop or text-region detection) and untested preprocessing methods
 
 **Last Updated:** 2026-10-17
