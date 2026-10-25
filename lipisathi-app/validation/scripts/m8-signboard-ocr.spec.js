@@ -22,17 +22,25 @@ import { fileURLToPath } from 'url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const validationDir = resolve(here, '..');
-const META = JSON.parse(readFileSync(resolve(validationDir, 'metadata/signboard-hindi-ground-truth.json'), 'utf-8'));
+// Extra env (defaults reproduce the Hindi signboard run exactly):
+//   SB_META      metadata file name under validation/metadata (default signboard-hindi-ground-truth.json)
+//   SB_VARIANTS  comma-separated variant ids to run (default: all three)
+const META_NAME = process.env.SB_META || 'signboard-hindi-ground-truth.json';
+const META = JSON.parse(readFileSync(resolve(validationDir, 'metadata', META_NAME), 'utf-8'));
 const DATA_DIR = process.env.SIGNBOARD_DATASET_DIR || resolve(homedir(), 'Downloads/indian-signboard-image-dataset');
-const OUT = process.env.SB_OUT || resolve(validationDir, 'results/M8-signboard-ocr-runs.json');
+const DEFAULT_OUT = META_NAME === 'signboard-hindi-ground-truth.json' ? 'results/M8-signboard-ocr-runs.json' : 'results/M8-telugu-signs-ocr-runs.json';
+const OUT = process.env.SB_OUT || resolve(validationDir, DEFAULT_OUT);
 const LIMIT = process.env.SB_LIMIT ? parseInt(process.env.SB_LIMIT, 10) : META.records.length;
 const RECORDS = META.records.slice(0, LIMIT);
 
-const VARIANTS = [
+const ALL_VARIANTS = [
   { id: 'full__raw', region: 'full', oriented: false },
   { id: 'full__oriented', region: 'full', oriented: true },
   { id: 'sign_box__oriented', region: 'sign_box', oriented: true },
 ];
+const WANTED = process.env.SB_VARIANTS ? process.env.SB_VARIANTS.split(',') : null;
+const VARIANTS = WANTED ? ALL_VARIANTS.filter((v) => WANTED.includes(v.id)) : ALL_VARIANTS;
+const LANG_CODE = { Hindi: 'hin', Telugu: 'tel' };
 
 /** Runs in the browser: decode (EXIF applied by the browser), optional crop, return lossless PNG. */
 async function orientAndCrop(page, b64, box) {
@@ -102,7 +110,7 @@ test.describe('M8 follow-up: signboard OCR capture', () => {
           }
           await page.waitForSelector('img[alt="Selected"]', { timeout: 30000 });
 
-          await page.locator('#languageSelect').selectOption('hin');
+          await page.locator('#languageSelect').selectOption(LANG_CODE[rec.language]);
           const runButton = page.locator('button:has-text("Run OCR")');
           await expect(runButton).toBeEnabled();
           await runButton.click();

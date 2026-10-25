@@ -1,0 +1,407 @@
+{
+  "dataset_name": "telugu_signboard_images (external, provided by the project owner; not stored in this repo)",
+  "dataset_root_env": "SIGNBOARD_DATASET_DIR",
+  "dataset_root_example": "~/Downloads/telugu_signboard_images",
+  "license_status": "UNKNOWN - no license, source or attribution files came with the folder. Images appear web-sourced (no EXIF, mostly 1280 px wide). Do not copy into the repo or redistribute until sources and licenses are checked.",
+  "box_coordinate_frame": "Pixels of the image as stored (none of the selected images carries an EXIF rotation).",
+  "text_conventions": "Telugu sign text only, top to bottom; digits kept when part of the message; Latin/Hindi/Urdu text, arrows, advertiser strips, phone numbers and tiny footers excluded; no zero-width joiners.",
+  "split_rule": "Records sorted by image number; every 3rd record (positions 3,6,9,12) is held_out, the rest dev. Fixed before any OCR was run.",
+  "selection_notes": "50 images were triaged visually. About 30 are not street signs (newspaper pages, book covers, a metro map, a Hindi road sign) or have dense/tiny/illegible text, and were excluded. 14 clear signs were selected (no repeat photos of the same sign).",
+  "verification_status": "ai_draft_pending_human_verification",
+  "verification_note": "All texts are AI drafts from visual reading. NONE is human verified. CER/WER must not be computed against them until a human verifies (or attests) them.",
+  "record_count": 14,
+  "records": [
+    {
+      "image_id": "te_002",
+      "source_filename": "image_02.jpg",
+      "relative_path": "image_02.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        960
+      ],
+      "sign_box_xyxy": [
+        370,
+        200,
+        820,
+        440
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "అంగలకుదురు",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Railway station board.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_007",
+      "source_filename": "image_07.jpg",
+      "relative_path": "image_07.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        892
+      ],
+      "sign_box_xyxy": [
+        0,
+        20,
+        670,
+        600
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "ఫతేనగర్",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Railway station board; Hindi/Urdu/English lines excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_010",
+      "source_filename": "image_10.jpg",
+      "relative_path": "image_10.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        953
+      ],
+      "sign_box_xyxy": [
+        440,
+        130,
+        1090,
+        430
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "held_out",
+      "ai_draft_text": "కంచర్లపాలెం",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Arrow symbol excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_013",
+      "source_filename": "image_13.jpg",
+      "relative_path": "image_13.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        960
+      ],
+      "sign_box_xyxy": [
+        10,
+        150,
+        1280,
+        820
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "శ్రీనివాసనగర్. బ్యాంక్ కాలనీ. రోడ్-1\n(ఎస్.బి.ఐ.సెం:3)\nగుత్తికొండ సత్యనారాయణ వీధి\nప్లాట్ నెం॥ కుడి : 1 నుండి 20\nఎడమ:41 నుండి 21",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Hand-painted; word spacing and punctuation (dots between words) uncertain.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_015",
+      "source_filename": "image_15.jpg",
+      "relative_path": "image_15.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1201,
+        901
+      ],
+      "sign_box_xyxy": [
+        140,
+        10,
+        930,
+        335
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "తెనాలి",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_016",
+      "source_filename": "image_16.jpg",
+      "relative_path": "image_16.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        720
+      ],
+      "sign_box_xyxy": [
+        140,
+        0,
+        1030,
+        420
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "held_out",
+      "ai_draft_text": "వేజెండ్ల",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Hindi/Latin lines excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_030",
+      "source_filename": "image_30.jpg",
+      "relative_path": "image_30.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1156,
+        520
+      ],
+      "sign_box_xyxy": [
+        30,
+        140,
+        1050,
+        260
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "కూరాకుల. వెంకయ్య మెమోరియల్\nఆర్లపాడు",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "'I.F.S' and 'Z.P.S.S' (Latin) excluded; tiny line to the right of line 2 excluded; spelling of 'ఆర్లపాడు' uncertain.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_032",
+      "source_filename": "image_32.jpg",
+      "relative_path": "image_32.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        960
+      ],
+      "sign_box_xyxy": [
+        210,
+        330,
+        1030,
+        505
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "భువనగిరి",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_040",
+      "source_filename": "image_40.jpg",
+      "relative_path": "image_40.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        674,
+        353
+      ],
+      "sign_box_xyxy": [
+        70,
+        145,
+        635,
+        225
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "held_out",
+      "ai_draft_text": "గౌతమి ఎక్స్ప్రెస్",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Written without zero-width joiner.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_044",
+      "source_filename": "image_44.jpg",
+      "relative_path": "image_44.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        761,
+        431
+      ],
+      "sign_box_xyxy": [
+        60,
+        100,
+        690,
+        370
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "విశాఖపట్నం సికింద్రాబాద్",
+      "ai_draft_confidence": "low",
+      "ai_draft_notes": "Stencilled, distorted glyphs on a train plate; first word uncertain; arrow symbol and Latin/digits excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_045",
+      "source_filename": "image_45.jpg",
+      "relative_path": "image_45.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        929
+      ],
+      "sign_box_xyxy": [
+        280,
+        180,
+        860,
+        400
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "గోదావరి",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Hindi/Latin lines excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_046",
+      "source_filename": "image_46.jpg",
+      "relative_path": "image_46.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        680
+      ],
+      "sign_box_xyxy": [
+        630,
+        60,
+        1190,
+        260
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "held_out",
+      "ai_draft_text": "ఉత్తర సింహాచలం",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Small Hindi and Latin lines excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_048",
+      "source_filename": "image_48.jpg",
+      "relative_path": "image_48.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        1280
+      ],
+      "sign_box_xyxy": [
+        0,
+        270,
+        1280,
+        610
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "శ్రీ ప్రసన్నాంజనేయ స్వామి వారి దేవాలయం",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Main line only; smaller lines (department, address) and the advertiser strip with phone numbers excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "te_049",
+      "source_filename": "image_49.jpg",
+      "relative_path": "image_49.jpg",
+      "language": "Telugu",
+      "script": "Telugu",
+      "image_size": [
+        1280,
+        720
+      ],
+      "sign_box_xyxy": [
+        280,
+        170,
+        625,
+        400
+      ],
+      "sign_box_source": "AI-estimated for this project (no annotations shipped with the images); verified visually by overlaying on each image",
+      "split": "dev",
+      "ai_draft_text": "తిరుపతి",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Hindi/Latin lines excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    }
+  ]
+}

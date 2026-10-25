@@ -1,0 +1,482 @@
+{
+  "phase": "M8 follow-up - signboard OCR capture",
+  "note": "Raw OCR output only. References are AI drafts pending human verification; no CER/WER computed.",
+  "dataset_root": "external (SIGNBOARD_DATASET_DIR); images not stored in the repo",
+  "variants": [
+    {
+      "id": "full__raw",
+      "region": "full",
+      "oriented": false
+    },
+    {
+      "id": "sign_box__oriented",
+      "region": "sign_box",
+      "oriented": true
+    }
+  ],
+  "record_count": 14,
+  "runs": [
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_002",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "గ ఎ 1౫౦\nఢి కా “డై గ\n10||\nఅ బంగ సడే (\nస జ్యా “గ\nక్ర కక.\nన (1\n.. ర\n\"బు శ్ర\nబ్య నాడ గ\nసై గళ / + | ఇ నష ఇ ఫద \"౧\n\"స ఆఆ $ ౨ శాం తి9౩ అ స మ్య కలగ\nఛు క్‌ ట్‌  .. శ న్నే.\nశం స జా గాకా చ్‌\n\"న్న 4 నేం క్మై' 6 ఖా.\nగ స 15 ట్ర \"స శ కక్‌... ల్‌\n|| 117 11౮... బ్‌ గ్గ\nప, జ\nట్య \"హ్మ్ము ౫ (గ,\nగ క కే క సెట్ల గో\nపు క స వ 1. స త ఇను ర 1) రో\nక్ష సు శ్ర పకక... గ త్య నట. స్‌ చా కం 1 1 చ\n\"11 1. జరా జల \"గ్‌\n\"౪ కా స కా 1\nస ద్య సి త్ల క్ట కు రన ” ఇగలాలాాాన్చా\nశ గ గ స్య న ఇ",
+      "ocr_confidence": 30,
+      "ocr_processing_time_seconds": 8.07,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_007",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "కూ 1. (త\nటా 41 ౧\n్ట ఇ ౫ (| 11.\nమ గ బా ప్‌ (| క్ట\nశ ప. | ౪\n[| [ న్‌ క\nక అత స” ? || \"\nశ్రా... ౪4. జలా?\n| గ్‌ పు 1\nగ శ్ర. (1 \"(సో\n1 1 కం పం శ\n| ట్ట గ (|\nకం ౮ ౨|\n- కాలా బా...\nఇకక క | ల క గ్గ అ లస టా గ \"స.\nకా క సై. డే : ఓత్రగ్‌. +\nవ. (కో. \"మ. నగి\n(| ణ్‌ క్‌ జ. క\n| బా | తాగ స 1. (4 రాలా. ్ట గ\n\"1 .కీతెతెత 1 ౪ ...\nశ || 1 గ క \"(1౪ ఉట! స \"న.\nక్‌ ( 1 శ ౧ | \" ( \"ఆ క్ట గ 1 గ్గ\n| ౮ | క / క (ట్‌ గ ( ఆ (\n. తమా... |... -\nత ఆ ( స\n్ట జ ( స ప శ్‌\nపం .\nస... క",
+      "ocr_confidence": 29,
+      "ocr_processing_time_seconds": 1.44,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_010",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "ఎన! గార్ల శ. | గగ చో గ్ర కం\n- శ్‌” 1115211\nర  'అధ గా\nచ = గ స్ర\nటబ పో క క కయ ఫల | ర్‌\nచ | గ్రా ) \"క\nగ శ క ళ్‌\nస్త క0ఛగ్రసోలె౦ ఈ ౬1\nక్ర\n| ట్ట గగ (గ\n' వ్‌ స్ట గా న స్ట రా\n\"1. ఉన్‌\n( క్‌ ( ₹8 ఇ య. ర్‌ ఆ\n1 \"మ క బ్‌ త త ట్ట ఇ\nకో న ఒళి. యు 1 = ప్ర గ్‌ అ\n“ఖ్‌ క్ష య గటా _\nట్ర * ఇల గే గై 3 న త - గ చీ క్ట గ\nక్క నం? 1? ట్ట ఆ ల్ని \"చ \"గ్య\nటూ స్థ క ళో అ శ ఇ? + ర పై ౫ ధు\nసై తయ... ఇఫ్‌ ర్వా\nఉన +\nగ్య “స్వ ఇన్త స చ\nక కా 1|| \"= గ ళ్‌\nన పటా పాకి + వ\n- కన \" ర గ ట్ర స క్ట ॥ ౫ , ౦౪...",
+      "ocr_confidence": 35,
+      "ocr_processing_time_seconds": 1.04,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_013",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "శ్రీనివాసనగర్‌ బ్ఞాంక్‌కాలిన్‌ రోడ్‌-1 క్త\nగ (ఎస్‌.బి.ఐ: ౩) \"\nకే గుత్తికాండ గనుత్యనారాయణకలభిధి -\n“ పషాాట్‌సెకుడి :1:2120\n\nప ' ఎదమఃకేశం&21 క్షామ",
+      "ocr_confidence": 32,
+      "ocr_processing_time_seconds": 0.39,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_015",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "₹)| 1/5 /౮ సే లే\nఓం. స్మ క స గో\nశ్‌ ఇదమ్‌ న... న? ౧5. బ్‌...” గ్‌\nగటు బు స... నీ పండ టే... గ తి. ఎ\nటా . స న ఫ్ర స్య స్య శ్ర...\nమ పా. \" ౯ గతం 1 అ\nళం కల్లో క (క క\nస్య గన. - ల\nక, \"ప క్క \"\nప శే గ పం\n\"కటక. న \"\nప \"క పో\nస్‌ జ (నే క్‌\nగ న 7 స\nస క ర్మ మ. నే శ 1 స్మ ల\nసన్‌. స శ క్‌ \" ||\nసా, క్‌ ఇ శ\nక గంగు క్త “క ్మ గ న్య 1 క స్థ\nరం టో 1 బా స్‌ స్‌ | 1\nయ. క\nస! ట్ట వ గగ \"4 | | న టైకేగ్‌\nఇ... త ప పాం. 1 చ\nటో పస. మా క స కక ఎక్యకే,\nతు క క\n్ట ర్మ? అందున శ ఇషం స క క్‌ స ప మ\nన అ... ౬న షయ స్‌ + లని\nగ “త ఆ “స శ క్క్ల ఓక గా క\nప్రా వ ల. పంకా” క శే, న\nస్మ 1. న) .\nశే కే టై క్‌ ల్లో క్క ప టా సై\n= ట్స కరక్టే. టు న సే గ\nభీ | న క్ట క. కట్టి\nప \"ల\nశీ 1 మట",
+      "ocr_confidence": 26,
+      "ocr_processing_time_seconds": 1.6,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_016",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "గ\nత్ర 21 221౬మ. పహ ఇట | _((\nత ఇ 5౮\nస ప స కత స్ట స ౧౯+ 1౧-౧౧౦ ౮ స ప\nకైక. = ౪. 1\n- గ 8.11” ” |.\nతే ( ( 11 |తే| క్ల పం\nగయ. ౧ ౯౯౯ 1 మై ' ప. కృ నే పై!\n౨. 1 తలలో క్ట క క నే ఇబ\nక్‌... \"క. కళ్ళ స. న్ను\nశ జో... 1. ఈ",
+      "ocr_confidence": 30,
+      "ocr_processing_time_seconds": 0.92,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_030",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "గ 6కి న\nక్షే ఇ...\nకఈూరాకుల, పెంకయ[ క మెమారియత్‌\nజారు. ౧",
+      "ocr_confidence": 35,
+      "ocr_processing_time_seconds": 0.26,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_032",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "శీ\nగ్ఫీ |\n|\nస\n( |\n(_౨)\n- \" | పట్రుననిునయిననా. \"\nగ] క పై 1 కై\n) __ ౬౨౨).\n\nగ\nకా గ... ర్త\nన గ | స్ప ద.\nబా స క్ట ల్‌ స్త్రి ౧||\nగర గ జ గ్గ సి వ (71||\n\nక \"న్‌ గ. ల సట సు మ్మా 11\nత్రయ ట్ట ర్య ర్ల. అ మా \"చ.\nక్క \"ల... \"గ మై క్‌ ఢం)\n| క గ స సై. త్త “(ల్ల 0 ఇ\nన యు ౩ త \"శం ర్య సి గ్య\nకం. సో క ఓడీ ్ట |\n| 1|| గ క. స\n111 గ",
+      "ocr_confidence": 31,
+      "ocr_processing_time_seconds": 0.78,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_040",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.13,
+      "detected_script": "Unknown",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_044",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "కా \"\n1 ఇక్షను ||\n(112.11 |\n( ఇల అల్‌ ఆ\n| |\n| (\n1 (16911111 =). (148110)\nశ్‌ (౧1౧1 ఇ ౪౧౧౪౭\n| క\n| శ క నరు గెక్ప మ 0౦ |\nశ సంసల. ఇ ౧౧౧౧ ్య .\nస రే సో ్క |\nస. ప.\nక్‌ ట్ట",
+      "ocr_confidence": 32,
+      "ocr_processing_time_seconds": 0.43,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_045",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "ప? సతిని ల... శే ణి శై గ్య\nప్‌ | కి క్‌? ప్న [కే $ ఎ శే\n+ ౪ | యల... వై త క్ష\nపం... శ్‌ గ... య |\nత గ ' ఎ... చచ ఇక క...\nశ్వ టి \"శై€. తో యత్‌ జడ 4 కా క క్స్‌ చ్చ).\n*1 క్షే ౮ ఓ త. శే 3. చా... స దట్‌ క, | ల\nత. టా ఇప... \"5 చుం గం.\nశి. టూ గు మ ఏ\nక్‌. ఆ“ పే ఆ 1౯” నల న క్ష |\nగ శృట్ద నిట్‌ చు... \"శా చు =. ట్ట \"1 తి\nస ఇ నం చో. -'1*\nశా ఇక ప్రస్‌! గ రం శ మై టై\nత శ ప ట్ల శ \" అ\n\" మాల... ఫన్‌ మా న... శ\n1₹ క ఖై బ్‌ త లె సో క్ట [ ఇ ళా వ్‌\n\" క ళు\n\" మఖ. అ లో ట్ర్‌ ఇ మ\n౧ స. స్త్ర. క్త కం శృతి ట్ట క\n* ప్ర (౨ 5 + ఇ 31) 5? జబ్‌ క క ఒం ' శెట్టి”\n- ' న6 శు... టో 29. ర శ్రే ౩ టు. \"త్త\n[| ఫక్‌ న మ చో\nత ఇ... | క్ట\n1155. తా\nజ ఇల్లలో\n౫ ౨౫౬ పజ అ. 5 స్‌\nన జ్రమా్తా\n3 టు. పా\n౨ ౨.\nత్త \"౩ సు కి మలు. తీ\nతి... స్య... ళ్‌ \" ఇన\nర్య \"ఛా గగ",
+      "ocr_confidence": 34,
+      "ocr_processing_time_seconds": 1.78,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_046",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "'\" శ్‌ క...\nగ - (| గా. టక్‌ 9 6 ఈష చల గ\nక... | క గగ.\n1 ౨ 10 | 51|| ప\n| గో = ౨౨౮౪",
+      "ocr_confidence": 30,
+      "ocr_processing_time_seconds": 0.49,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_048",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "(పబ\n\"బం. పు లి\n. సా \"ప... ౬7 గట గ\n7|| ఆ | \"తై \"బబ క ప (జ ౧ 1...\n. \"స శ | మ కా. ... 1... ల గ ర్ల\n- ౮ 1 11\n౮ స స \". | న - క గ అం. త్య అ 10 గక ౮ గ\n౮ 1. ప ౮\nస (1 న్న 1. ట్‌ \"శ 1. \"17 గ మే. 7\nఅ. (స! | గ... \"7 /\nప ర | ట్రం. గ ఇ గ. ౮ ల్‌ ౬4\n| సై రైజ్‌ ్ఞాల్‌ క్ఞా రాష్థాక్మా. (క కైన కాగ ఢ్లక్సాన్సూ రా 1 | గ\n| | |: ౨ |): ౧౨. థి ర్డ\n(5) కక కా క్రై. ఢా (ఇ (5 డి | (గ \"(ా న్‌ (2 11||\n2 క్‌ 1 | సై క. క్లాడ్‌ - 2 (క [0 క్రై 1 \"| స్‌ _ |\nఇ లాజ్‌ ౨. శ్ర క ఆ అజ తీ ౬ ల ట్ర | కే...\nక కాల్‌. (5 క \" \"క్త వ |... | \" | ల్‌ | సే క్‌ కే ్ట స\n| గ | | \"ల క కా కా. క.\nమజ (దేవాదాయ ధర్మాదోయ శాఖ) |\nశ్రీ పురం, సరూర్‌నగర్‌(వ గ ప\nఫ్‌ - ర్‌(మం), రంగారెడ్డి జిల్లా, హైదరాబాగ్మిర500 102.\nక్వ ప నా నా -\n్మి క... కా ఇ ౫ ఛ -\n| . క\n| ౬|| |\n| | 4 కి కా న్యా\n| రా|| | 7 | గా 48 .... క , ట్ర.\n(| | ( (స (| | \"₹|| | |. క. ట్య ల్ల\n| ] | \"| |\nవ స్ట |\n౦ - ౨- ఎలా |\n౫ (|\nఅ ఆ (1 18|| | |\nస \" 228 క కలా\nప. 1 |||\n- | - క | |\nస ( . |\n( / - . '\n/్‌ - టక.\nట్ట | |\n- | శ |\nస. గ్గ క. - |\n+ స | కకక 1 క కకక.\nప్‌ 1... | . | |\nత |",
+      "ocr_confidence": 32,
+      "ocr_processing_time_seconds": 3,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "full__raw",
+      "image_id": "te_049",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": null,
+      "input_height": null,
+      "browser_natural_size": null,
+      "ocr_status": "success",
+      "ocr_text": "క్‌! |\n! కా 7 ప ...త...\nూ తిరుపతి\nహా ౫ స శే 1౯ | స్ట న .. ( ద క \"స\nయ క్మ్‌ '\nఇల... | ఇ.) | (\nఎ. 1 ₹71౧౮౭౧7| క\n౨ ౨ - = ఇ సై! ౨౨౮ ౨: ౩)\nఆ | 3౯|| ఇఅ౭|32౩|౪౩ ౬౯ | “౯ కా బైన తా మనం\nకా. | తై క... ఇకా: 1 క (0.13\nకె... కా... ౧-౫ దా... పాం క\nక ద... ౨... ౨...\nనానా లాలన నాగాలానానా! కం ౦౦౦౦౦౦౭౫౫౭ 2092 ౨౨౨౨౨ = ౨౨ ఆానకాలనాలాలాగాకాాననమ,\n౨ ౯ ఎ 1. రాలా గాాకస్యత్ఞ గా చు కు",
+      "ocr_confidence": 33,
+      "ocr_processing_time_seconds": 1.22,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_002",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 496,
+      "input_height": 264,
+      "browser_natural_size": [
+        1280,
+        960
+      ],
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.12,
+      "detected_script": "Unknown",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_007",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 704,
+      "input_height": 629,
+      "browser_natural_size": [
+        1280,
+        892
+      ],
+      "ocr_status": "success",
+      "ocr_text": "| జనం క్‌ స\nఇక్‌ పం 0 1 త. గ\n+ క్ట\n\nక్ర క\n\nక. ఉట...\n\nట్ట న్‌...\n\nక...\n\nగలం. కకత\n\nగ\"\n\nట్ట శ\n1 ఎ |\n\nగ\n\n₹ న",
+      "ocr_confidence": 30,
+      "ocr_processing_time_seconds": 0.38,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_010",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 716,
+      "input_height": 330,
+      "browser_natural_size": [
+        1280,
+        953
+      ],
+      "ocr_status": "success",
+      "ocr_text": "ఏ మునక స.\nకంళర్థపాలెం క",
+      "ocr_confidence": 16,
+      "ocr_processing_time_seconds": 0.24,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_013",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 1280,
+      "input_height": 738,
+      "browser_natural_size": [
+        1280,
+        960
+      ],
+      "ocr_status": "success",
+      "ocr_text": "|\" కాకు. క .\nశ్రీనివాసనగశ్‌ బ్లాంక్‌కాలనీ రోడ్‌.1 \"ళీ\nక్‌ (ఎస్‌.బి.ఐ.30: ౩) ట్ట\n\". గుత్తికాండ సత్యనారాయణలవిధి ..",
+      "ocr_confidence": 39,
+      "ocr_processing_time_seconds": 0.39,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_015",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 870,
+      "input_height": 352,
+      "browser_natural_size": [
+        1201,
+        901
+      ],
+      "ocr_status": "success",
+      "ocr_text": "టో స్క 7 ్ష్ర్‌్‌ క... గ్‌. లు తనని య్‌...\nఅ “య... స్‌ స గ్య కాల\n॥ \"౩౫ - ప\nమ. సష్రస్తుక \" |\nకా | | బే స\nసం, గ\nగ\nకా |\nన పు టా ్మ త న... శ బా ళ",
+      "ocr_confidence": 34,
+      "ocr_processing_time_seconds": 0.41,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_016",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 980,
+      "input_height": 441,
+      "browser_natural_size": [
+        1280,
+        720
+      ],
+      "ocr_status": "success",
+      "ocr_text": "౪౯౮౯౦౧.",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.2,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_030",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 1101,
+      "input_height": 132,
+      "browser_natural_size": [
+        1156,
+        520
+      ],
+      "ocr_status": "success",
+      "ocr_text": "తూరాకుల వెంకయ 7 6మెమోరియతల్‌\nగ 2.6 6.6 ఆర్రమారు టోకల్‌ మం ఖమ్మం(జిని",
+      "ocr_confidence": 51,
+      "ocr_processing_time_seconds": 0.2,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_032",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 902,
+      "input_height": 193,
+      "browser_natural_size": [
+        1280,
+        960
+      ],
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.12,
+      "detected_script": "Unknown",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_040",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 623,
+      "input_height": 88,
+      "browser_natural_size": [
+        674,
+        353
+      ],
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.11,
+      "detected_script": "Unknown",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_044",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 694,
+      "input_height": 298,
+      "browser_natural_size": [
+        761,
+        431
+      ],
+      "ocr_status": "success",
+      "ocr_text": "| (4219134౩ ॥\n| (11:11. |\n| 1. వై స\n| (101 2 0౧౧౮౧౬ .\n| ప్రసాఖపుమ్నం. ఇర సేకింప్రాబాట్‌",
+      "ocr_confidence": 40,
+      "ocr_processing_time_seconds": 0.25,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_045",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 638,
+      "input_height": 242,
+      "browser_natural_size": [
+        1280,
+        929
+      ],
+      "ocr_status": "success",
+      "ocr_text": "ట్రే.\nతార కల\nస క్ట\nగ ప్ర ని \"గ ₹ క్‌;\nకమల్‌ కాల్చు ఇ. ఇ కల్మ హా శ\n. గాం \"ౌ నా భ్‌ ఆ\nక ళ్‌ 1... స్‌\nప ౨ , || ౧౦౨౮ + గ/'గీ\nసీ 11౪ 1/1౪ మూ\nణ్‌ 1211 7, 11 గ ౫ తిరి కా 5",
+      "ocr_confidence": 33,
+      "ocr_processing_time_seconds": 0.39,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_046",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 616,
+      "input_height": 220,
+      "browser_natural_size": [
+        1280,
+        680
+      ],
+      "ocr_status": "success",
+      "ocr_text": "తా ఆట కుం ర ఎట...\nల ల ౬౮౦0 ఇలా ల్‌ దలకు\n\n| క... 8 ౧10౮ ఇ౪౮౪\n| కుట 'ళ (0౧౪6౪ ఆ''తో'తో\n\nకేకే (రై గై ౧౧411 ౧/౮ కక గ! కట\nటం ఇ |) || 161 గీ ౬ | 1%\nఅ. ప్రయ 2 1|| 11077\n\nఇనకాజే |? గా. క",
+      "ocr_confidence": 27,
+      "ocr_processing_time_seconds": 0.48,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_048",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 1280,
+      "input_height": 374,
+      "browser_natural_size": [
+        1280,
+        1280
+      ],
+      "ocr_status": "success",
+      "ocr_text": "| ల) 222. క్రాక్‌ (దేవాదాయ ధర్వాణోక్‌ క \"\nశ్రీ రామరకృవ్ణాపు [కల సరూర్‌నగర్‌(మం), “ పర 500102.\n111. 4. _ ౨౫౩౨౩౩౩౭౯౩",
+      "ocr_confidence": 36,
+      "ocr_processing_time_seconds": 0.33,
+      "detected_script": "Telugu",
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_049",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 381,
+      "input_height": 254,
+      "browser_natural_size": [
+        1280,
+        720
+      ],
+      "ocr_status": "success",
+      "ocr_text": "నో \"712 ౪౭47| |",
+      "ocr_confidence": 32,
+      "ocr_processing_time_seconds": 0.14,
+      "detected_script": "Telugu",
+      "error": null
+    }
+  ]
+}
