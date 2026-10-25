@@ -7,8 +7,8 @@
   "text_conventions": "Telugu sign text only, top to bottom; digits kept when part of the message; Latin/Hindi/Urdu text, arrows, advertiser strips, phone numbers and tiny footers excluded; no zero-width joiners.",
   "split_rule": "Records sorted by image number; every 3rd record (positions 3,6,9,12) is held_out, the rest dev. Fixed before any OCR was run.",
   "selection_notes": "50 images were triaged visually. About 30 are not street signs (newspaper pages, book covers, a metro map, a Hindi road sign) or have dense/tiny/illegible text, and were excluded. 14 clear signs were selected (no repeat photos of the same sign).",
-  "verification_status": "ai_draft_pending_human_verification",
-  "verification_note": "All texts are AI drafts from visual reading. NONE is human verified. CER/WER must not be computed against them until a human verifies (or attests) them.",
+  "verification_status": "human_verified_user_attested",
+  "verification_note": "Project owner attested all 14 AI-draft texts as correct on 2026-10-25. This is an attestation: reviewer name, Telugu reading fluency (asked, not stated), time spent and per-record notes were not recorded. The AI drafts are preserved in ai_draft_text.",
   "record_count": 14,
   "records": [
     {
@@ -32,12 +32,12 @@
       "ai_draft_text": "అంగలకుదురు",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Railway station board.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "అంగలకుదురు",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_007",
@@ -60,12 +60,12 @@
       "ai_draft_text": "ఫతేనగర్",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Railway station board; Hindi/Urdu/English lines excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "ఫతేనగర్",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_010",
@@ -88,12 +88,12 @@
       "ai_draft_text": "కంచర్లపాలెం",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Arrow symbol excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "కంచర్లపాలెం",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_013",
@@ -116,12 +116,12 @@
       "ai_draft_text": "శ్రీనివాసనగర్. బ్యాంక్ కాలనీ. రోడ్-1\n(ఎస్.బి.ఐ.సెం:3)\nగుత్తికొండ సత్యనారాయణ వీధి\nప్లాట్ నెం॥ కుడి : 1 నుండి 20\nఎడమ:41 నుండి 21",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Hand-painted; word spacing and punctuation (dots between words) uncertain.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "శ్రీనివాసనగర్. బ్యాంక్ కాలనీ. రోడ్-1\n(ఎస్.బి.ఐ.సెం:3)\nగుత్తికొండ సత్యనారాయణ వీధి\nప్లాట్ నెం॥ కుడి : 1 నుండి 20\nఎడమ:41 నుండి 21",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_015",
@@ -144,12 +144,12 @@
       "ai_draft_text": "తెనాలి",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "తెనాలి",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_016",
@@ -172,12 +172,12 @@
       "ai_draft_text": "వేజెండ్ల",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Hindi/Latin lines excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "వేజెండ్ల",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_030",
@@ -200,12 +200,12 @@
       "ai_draft_text": "కూరాకుల. వెంకయ్య మెమోరియల్\nఆర్లపాడు",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "'I.F.S' and 'Z.P.S.S' (Latin) excluded; tiny line to the right of line 2 excluded; spelling of 'ఆర్లపాడు' uncertain.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "కూరాకుల. వెంకయ్య మెమోరియల్\nఆర్లపాడు",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_032",
@@ -228,12 +228,12 @@
       "ai_draft_text": "భువనగిరి",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "భువనగిరి",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_040",
@@ -256,12 +256,12 @@
       "ai_draft_text": "గౌతమి ఎక్స్ప్రెస్",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Written without zero-width joiner.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "గౌతమి ఎక్స్ప్రెస్",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_044",
@@ -284,12 +284,12 @@
       "ai_draft_text": "విశాఖపట్నం సికింద్రాబాద్",
       "ai_draft_confidence": "low",
       "ai_draft_notes": "Stencilled, distorted glyphs on a train plate; first word uncertain; arrow symbol and Latin/digits excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "విశాఖపట్నం సికింద్రాబాద్",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_045",
@@ -312,12 +312,12 @@
       "ai_draft_text": "గోదావరి",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Hindi/Latin lines excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "గోదావరి",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_046",
@@ -340,12 +340,12 @@
       "ai_draft_text": "ఉత్తర సింహాచలం",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Small Hindi and Latin lines excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "ఉత్తర సింహాచలం",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_048",
@@ -368,12 +368,12 @@
       "ai_draft_text": "శ్రీ ప్రసన్నాంజనేయ స్వామి వారి దేవాలయం",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Main line only; smaller lines (department, address) and the advertiser strip with phone numbers excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "శ్రీ ప్రసన్నాంజనేయ స్వామి వారి దేవాలయం",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     },
     {
       "image_id": "te_049",
@@ -396,12 +396,26 @@
       "ai_draft_text": "తిరుపతి",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Hindi/Latin lines excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "తిరుపతి",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all are correct\" for all 14 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged. Reviewer was asked about Telugu fluency and did not state it."
     }
-  ]
+  ],
+  "verified_count": 14,
+  "human_verification": {
+    "verified_by": "Project owner (human; name not provided)",
+    "method": "Owner viewed each sign next to the AI draft in a local review page and replied \"all are correct\".",
+    "date": "2026-10-25",
+    "limitations": [
+      "Reviewer name not recorded",
+      "Reviewer Telugu fluency asked but not stated",
+      "No per-record notes or corrections recorded",
+      "All drafts accepted unchanged, including 3 medium-confidence and 1 low-confidence draft (te_013, te_030, te_048, te_044)",
+      "Single reviewer, no second-reviewer check",
+      "Sign crop boxes are AI-estimated, not from dataset annotations"
+    ]
+  }
 }

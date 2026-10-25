@@ -558,6 +558,7 @@ Based on OCR literature and M7 baseline confidence (18-54%):
 **Status:** M8 first round complete (Phases 1-6): ground truth, baseline, grayscale/contrast/2x upscale on whole image vs manual sign crop, analysis  
 **Follow-up done:** script-filtered CER/WER on existing OCR output (`results/M8-followup-analysis.md`). The ground truth was already target-script-only, so no new ground truth was needed for the 12 images.  
 **Signboard Hindi extension done (31 signs, owner-attested):** see `results/M8-signboard-analysis.md`. Sign crop lowered CER on 31/31 images; crop CER is still above 1 and word recall about 25%.  
-**Next Step:** Telugu photos are still needed from the project owner (the signboard dataset has none). Earlier note: 30-50 verified real sign photos (see section 5 of `results/M8-followup-analysis.md`). After that: sign isolation (user crop or text-region detection) and untested preprocessing methods
+**Telugu signs done (14 signs, owner-attested):** see `results/M8-telugu-signs-analysis.md`. Telugu OCR read almost nothing (1-2 of 41 reference words; 3 crops returned no text); crop still lowers CER.  
+**Next Step:** Test a stronger Telugu model (`tessdata_best`) and crop upscaling, which need an OCR configuration change and your go-ahead; have a fluent Telugu reviewer re-check the 4 uncertain references. Earlier note: 30-50 verified real sign photos (see section 5 of `results/M8-followup-analysis.md`). After that: sign isolation (user crop or text-region detection) and untested preprocessing methods
 
 **Last Updated:** 2026-10-17
