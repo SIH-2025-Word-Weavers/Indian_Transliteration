@@ -1,0 +1,883 @@
+{
+  "dataset_name": "Datacluster Indian Signboard (external, not stored in this repo)",
+  "dataset_root_env": "SIGNBOARD_DATASET_DIR",
+  "dataset_root_example": "~/Downloads/indian-signboard-image-dataset",
+  "license_status": "UNKNOWN - no license file shipped with the download. Do not copy images into the repo or redistribute until the source terms are checked.",
+  "box_coordinate_frame": "Pixels in the EXIF-orientation-corrected image (most files carry EXIF orientation 6). Boxes come from the dataset annotation XML (Pascal VOC), not from this project.",
+  "text_conventions": "Devanagari sign message text, top to bottom; digits kept when part of the message; Latin-only text, logo/emblem captions, phone numbers, stickers and tiny footers excluded.",
+  "split_rule": "Records sorted by image number; every 3rd record (positions 3,6,9,...) is held_out, the rest dev. Fixed before any OCR was run. One photo per physical sign was selected, so no repeat photos cross the split.",
+  "selection_notes": "Selected visually (AI triage) from 200 images: single annotated box, clear Devanagari text. Excluded: images with 2+ boxes (#38,#42,#54,#89,#178), occluded (#17), repeat photos of already-selected signs, dense/tiny text, blur.",
+  "verification_status": "ai_draft_pending_human_verification",
+  "verification_note": "All texts are AI drafts from visual reading. NONE is human verified. CER/WER must not be computed against them until a human verifies (or attests) them.",
+  "record_count": 31,
+  "records": [
+    {
+      "image_id": "sb_006",
+      "source_filename": "Datacluster Indian Signboard (6).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (6).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (6).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1920,
+        4160
+      ],
+      "sign_box_xyxy": [
+        665.45,
+        1348.4,
+        1288.78,
+        1863.32
+      ],
+      "split": "dev",
+      "ai_draft_text": "पेड़ पौधे मत करो नष्ट\nसाँस लेने मे होगा कष्ट",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_010",
+      "source_filename": "Datacluster Indian Signboard (10).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (10).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (10).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1968,
+        4144
+      ],
+      "sign_box_xyxy": [
+        582.1,
+        634.07,
+        1601.2,
+        972.21
+      ],
+      "split": "dev",
+      "ai_draft_text": "महरौली\nयकृत एवं पित्त\nविज्ञान संस्थान",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Logo/Latin text excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_011",
+      "source_filename": "Datacluster Indian Signboard (11).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (11).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (11).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        784.8,
+        188.48,
+        1618.5,
+        1324.7
+      ],
+      "split": "held_out",
+      "ai_draft_text": "बी 78 से 111\nएम ब्लॉक\nमार्किट\nआर, एस, ई\nब्लॉक",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Small footer logo text excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_012",
+      "source_filename": "Datacluster Indian Signboard (12).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (12).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (12).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1215.1,
+        390.2,
+        2210.12,
+        1741.52
+      ],
+      "split": "dev",
+      "ai_draft_text": "जी के\nएन्क्लेव-1\nपम्पोश",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_018",
+      "source_filename": "Datacluster Indian Signboard (18).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (18).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (18).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        2000,
+        4000
+      ],
+      "sign_box_xyxy": [
+        384.2,
+        429.8,
+        1563.36,
+        1817.43
+      ],
+      "split": "dev",
+      "ai_draft_text": "बकाने बंधु\nकृषी केन्द्र\nसेवाग्राम",
+      "ai_draft_confidence": "low",
+      "ai_draft_notes": "Third line is small hand-painted text; spelling uncertain.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_021",
+      "source_filename": "Datacluster Indian Signboard (21).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (21).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (21).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1184,
+        2560
+      ],
+      "sign_box_xyxy": [
+        389.65,
+        862.87,
+        698.18,
+        1117.21
+      ],
+      "split": "held_out",
+      "ai_draft_text": "रात में लो बीम\nका प्रयोग करें।",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_026",
+      "source_filename": "Datacluster Indian Signboard (26).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (26).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (26).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1184,
+        2560
+      ],
+      "sign_box_xyxy": [
+        414.66,
+        879.55,
+        677.34,
+        1096.36
+      ],
+      "split": "dev",
+      "ai_draft_text": "वाहन गति\nसीमा में ही चलाएँ",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_028",
+      "source_filename": "Datacluster Indian Signboard (28).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (28).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (28).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1578,
+        2543
+      ],
+      "sign_box_xyxy": [
+        459.7,
+        434.88,
+        902.89,
+        791.07
+      ],
+      "split": "dev",
+      "ai_draft_text": "पोलायकलाँ",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_033",
+      "source_filename": "Datacluster Indian Signboard (33).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (33).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (33).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3120,
+        4160
+      ],
+      "sign_box_xyxy": [
+        1055.03,
+        1273.87,
+        1698.7,
+        1890.42
+      ],
+      "split": "held_out",
+      "ai_draft_text": "जिलाधिकारी\nआवास",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_034",
+      "source_filename": "Datacluster Indian Signboard (34).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (34).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (34).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3120,
+        4160
+      ],
+      "sign_box_xyxy": [
+        1393.79,
+        880.9,
+        2294.9,
+        1958.17
+      ],
+      "split": "dev",
+      "ai_draft_text": "धर्मशाला\nठहरने के लिए हॉल\nएवं रजाई-गद्दे व कम्बल\nउपलब्ध हैं।",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "First word of line 3 ('एवं') uncertain; phone number excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_050",
+      "source_filename": "Datacluster Indian Signboard (50).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (50).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (50).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1208.37,
+        195.2,
+        2169.78,
+        1533.1
+      ],
+      "split": "dev",
+      "ai_draft_text": "धौला कुँआ\nबड़ा बाजार, राजेन्द्र नगर\nWEA कॉलोनी, करोलबाग",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Line 3 mixes Latin 'WEA' with Devanagari as printed.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_051",
+      "source_filename": "Datacluster Indian Signboard (51).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (51).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (51).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1557.98,
+        867.51,
+        2196.67,
+        1250.73
+      ],
+      "split": "held_out",
+      "ai_draft_text": "कनॉट प्लेस\nधौला कुँआ",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Logo caption excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_052",
+      "source_filename": "Datacluster Indian Signboard (52).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (52).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (52).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1268.88,
+        719.6,
+        1645.38,
+        1149.88
+      ],
+      "split": "dev",
+      "ai_draft_text": "इस सड़क पर\nवाहन खड़ा करना\nवर्जित है।",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Small logo caption excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_057",
+      "source_filename": "Datacluster Indian Signboard (57).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (57).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (57).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1440,
+        2560
+      ],
+      "sign_box_xyxy": [
+        651.07,
+        804.5,
+        909.57,
+        1213.1
+      ],
+      "split": "dev",
+      "ai_draft_text": "डी एस सी रोड\nभंगेल\nबरोला",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_058",
+      "source_filename": "Datacluster Indian Signboard (58).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (58).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (58).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        2560,
+        1440
+      ],
+      "sign_box_xyxy": [
+        614.95,
+        516.6,
+        1461.42,
+        864.0
+      ],
+      "split": "held_out",
+      "ai_draft_text": "हौजरी कॉम्प्लेक्स\nभंगेल\nसेक्टर\n80,81,88\nसूरजपुर",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Two-panel board; reading order left panel then right panel; 'हौजरी' spelling uncertain.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_059",
+      "source_filename": "Datacluster Indian Signboard (59).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (59).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (59).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        1440,
+        2560
+      ],
+      "sign_box_xyxy": [
+        342.53,
+        508.48,
+        1076.35,
+        1342.35
+      ],
+      "split": "dev",
+      "ai_draft_text": "औद्योगिक क्षेत्र, फेज-II\nहौजरी कॉम्प्लैक्स",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Sign is tilted and sun-glared.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_069",
+      "source_filename": "Datacluster Indian Signboard (69).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (69).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (69).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3000,
+        4000
+      ],
+      "sign_box_xyxy": [
+        610.91,
+        560.1,
+        1242.83,
+        1081.27
+      ],
+      "split": "dev",
+      "ai_draft_text": "बेंगलूर\nलोक निर्माण विभाग",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_071",
+      "source_filename": "Datacluster Indian Signboard (71).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (71).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (71).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3000,
+        4000
+      ],
+      "sign_box_xyxy": [
+        962.7,
+        859.7,
+        1457.82,
+        1543.81
+      ],
+      "split": "held_out",
+      "ai_draft_text": "प्रधानमंत्री\nग्राम सड़क योजना\nभारी वाहन\nप्रवेश निषेध\nअधिकतम् वाहन भार-12 टन",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Tiny bottom footer line excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_072",
+      "source_filename": "Datacluster Indian Signboard (72).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (72).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (72).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1678.99,
+        443.95,
+        2364.75,
+        1432.25
+      ],
+      "split": "dev",
+      "ai_draft_text": "हुडा ऑफिस कॉम्प्लेक्स",
+      "ai_draft_confidence": "low",
+      "ai_draft_notes": "First word is hard to read ('हुडा' assumed).",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_073",
+      "source_filename": "Datacluster Indian Signboard (73).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (73).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (73).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1517.64,
+        1519.65,
+        1820.18,
+        2057.5
+      ],
+      "split": "dev",
+      "ai_draft_text": "टाउन पार्क",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_082",
+      "source_filename": "Datacluster Indian Signboard (82).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (82).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (82).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        892.39,
+        699.43,
+        1746.22,
+        1183.5
+      ],
+      "split": "held_out",
+      "ai_draft_text": "सेक्टर 28",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_090",
+      "source_filename": "Datacluster Indian Signboard (90).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (90).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (90).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1161.31,
+        585.14,
+        1907.58,
+        1170.05
+      ],
+      "split": "dev",
+      "ai_draft_text": "नौएडा\nसै०-149, 152, 151, 153",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Stickers and handwritten phone number excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_091",
+      "source_filename": "Datacluster Indian Signboard (91).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (91).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (91).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1107.53,
+        430.51,
+        1544.53,
+        759.94
+      ],
+      "split": "dev",
+      "ai_draft_text": "सैक्टर 168",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_103",
+      "source_filename": "Datacluster Indian Signboard (103).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (103).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (103).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1067.2,
+        538.08,
+        2089.1,
+        1405.4
+      ],
+      "split": "held_out",
+      "ai_draft_text": "कृप्या गेट के सामने\nवाहन खड़ा न करें!\nयह आम रास्ता नही है,\nकृप्या बड़ा गेट बन्द करके जायें",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Hand-painted; first line partly overpainted.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_107",
+      "source_filename": "Datacluster Indian Signboard (107).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (107).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (107).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1114.2,
+        544.8,
+        1840.35,
+        934.74
+      ],
+      "split": "dev",
+      "ai_draft_text": "फरीदाबाद गैस पावर स्टेशन\n3.5 कि. मी.",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Logo caption excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_124",
+      "source_filename": "Datacluster Indian Signboard (124).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (124).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (124).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3456,
+        4608
+      ],
+      "sign_box_xyxy": [
+        786.49,
+        772.98,
+        1409.4,
+        1823.67
+      ],
+      "split": "dev",
+      "ai_draft_text": "लोकल शॉपिंग\nसेन्टर",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Part of the sign is in shadow.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_125",
+      "source_filename": "Datacluster Indian Signboard (125).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (125).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (125).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3456,
+        4608
+      ],
+      "sign_box_xyxy": [
+        2257.4,
+        1335.85,
+        2992.93,
+        1853.68
+      ],
+      "split": "held_out",
+      "ai_draft_text": "लाजपत नगर",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_130",
+      "source_filename": "Datacluster Indian Signboard (130).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (130).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (130).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1598.3,
+        679.26,
+        2142.89,
+        1291.07
+      ],
+      "split": "dev",
+      "ai_draft_text": "ग्रेटर नोएडा\nएक्सप्रेसवे\nसैक्टर- 92 से 105\n108, 124 से 135",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_138",
+      "source_filename": "Datacluster Indian Signboard (138).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (138).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (138).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        946.2,
+        363.3,
+        1927.75,
+        1196.9
+      ],
+      "split": "dev",
+      "ai_draft_text": "सर्किट हाउस\nसेक्टर 16-ए",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_140",
+      "source_filename": "Datacluster Indian Signboard (140).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (140).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (140).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        435.21,
+        40.6,
+        3030.3,
+        1950.0
+      ],
+      "split": "held_out",
+      "ai_draft_text": "निवास\nनरेन्द्र गुप्ता\nविधायक फरीदाबाद\nमकान नं. 1126, सेक्टर 15, फरीदाबाद\nनगर निगम फरीदाबाद",
+      "ai_draft_confidence": "medium",
+      "ai_draft_notes": "Small logos excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    },
+    {
+      "image_id": "sb_172",
+      "source_filename": "Datacluster Indian Signboard (172).jpg",
+      "relative_path": "selected/selected/Datacluster Indian Signboard (172).jpg",
+      "annotation_file": "annotation/annotation/Datacluster Indian Signboard (172).xml",
+      "language": "Hindi",
+      "script": "Devanagari",
+      "oriented_image_size": [
+        3096,
+        4128
+      ],
+      "sign_box_xyxy": [
+        1860.52,
+        322.94,
+        2821.9,
+        1089.4
+      ],
+      "split": "dev",
+      "ai_draft_text": "न्यू फ्रेन्ड्स कॉलोनी",
+      "ai_draft_confidence": "high",
+      "ai_draft_notes": "Logo caption excluded.",
+      "verification_status": "ai_draft_pending_human_verification",
+      "verified_text": null,
+      "reviewer": null,
+      "reviewer_type": null,
+      "verification_date": null,
+      "reviewer_notes": null
+    }
+  ]
+}

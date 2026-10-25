@@ -47,6 +47,15 @@ Suggested next dataset (needs the project owner to supply the photos):
 - For each image: the file under `validation/dataset/`, a record in `metadata/ground-truth.json` with `verified_text` (target-script sign text only) and a reviewer, and a crop box in `metadata/sign-crop-regions.json`.
 - Then re-run `m8-preprocessing-ocr.spec.js` and the three calculate/render scripts. Note: the scripts currently check for exactly 12 records, so the count check must be updated when the dataset grows.
 
+## 5b. Update: signboard Hindi extension (status: waiting for human verification)
+
+A downloaded signboard dataset (200 photos with signboard bounding boxes, no transcriptions, no license file) was triaged visually. It contains **no Telugu**, roughly 60 images with Hindi and about a third Tamil. From it, 31 clean single-box Hindi signs were selected (one photo per physical sign; 21 dev, 10 held-out, split rule fixed before OCR).
+
+- Metadata: `metadata/signboard-hindi-ground-truth.json`. Texts there are **AI drafts, not human verified** (`ai_draft_pending_human_verification`). The images are external and are not in the repo (license unknown).
+- OCR capture is done: 3 variants x 31 signs = 93 runs, all successful (`results/M8-signboard-ocr-runs.json`). Variants: `full__raw` (file as uploaded), `full__oriented` (EXIF rotation applied), `sign_box__oriented` (dataset box crop).
+- **No CER/WER has been computed.** `scripts/calculate-signboard-cer-wer.js` refuses to run until every record is human verified.
+- Descriptive only, no reference needed: whole 12-megapixel photos produce about 5,000 characters of output each (mean 5,074 raw / 5,021 oriented) and take about 19-22 s, versus about 206 characters and 0.8 s for the box crop. Mean Tesseract confidence is 19 for whole photos and 31 for the crop. These are output-size and speed facts, not accuracy.
+
 ## 6. Limitations
 
 Same as `M8-phase6-analysis.md`: 12 images, 73 reference words, one run per cell, attested (not independently recorded) human verification, hand-drawn crops, system Chrome instead of bundled Chromium. The filter only handles script; it does not distinguish the target sign from other target-script text.
