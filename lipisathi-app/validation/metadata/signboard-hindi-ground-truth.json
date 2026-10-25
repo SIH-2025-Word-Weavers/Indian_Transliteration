@@ -7,8 +7,8 @@
   "text_conventions": "Devanagari sign message text, top to bottom; digits kept when part of the message; Latin-only text, logo/emblem captions, phone numbers, stickers and tiny footers excluded.",
   "split_rule": "Records sorted by image number; every 3rd record (positions 3,6,9,...) is held_out, the rest dev. Fixed before any OCR was run. One photo per physical sign was selected, so no repeat photos cross the split.",
   "selection_notes": "Selected visually (AI triage) from 200 images: single annotated box, clear Devanagari text. Excluded: images with 2+ boxes (#38,#42,#54,#89,#178), occluded (#17), repeat photos of already-selected signs, dense/tiny text, blur.",
-  "verification_status": "ai_draft_pending_human_verification",
-  "verification_note": "All texts are AI drafts from visual reading. NONE is human verified. CER/WER must not be computed against them until a human verifies (or attests) them.",
+  "verification_status": "human_verified_user_attested",
+  "verification_note": "Project owner attested all 31 AI-draft texts as correct on 2026-10-25. This is an attestation: reviewer name, language fluency, time spent and per-record notes were not recorded. The AI drafts are preserved in ai_draft_text.",
   "record_count": 31,
   "records": [
     {
@@ -32,12 +32,12 @@
       "ai_draft_text": "पेड़ पौधे मत करो नष्ट\nसाँस लेने मे होगा कष्ट",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "पेड़ पौधे मत करो नष्ट\nसाँस लेने मे होगा कष्ट",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_010",
@@ -60,12 +60,12 @@
       "ai_draft_text": "महरौली\nयकृत एवं पित्त\nविज्ञान संस्थान",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Logo/Latin text excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "महरौली\nयकृत एवं पित्त\nविज्ञान संस्थान",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_011",
@@ -88,12 +88,12 @@
       "ai_draft_text": "बी 78 से 111\nएम ब्लॉक\nमार्किट\nआर, एस, ई\nब्लॉक",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Small footer logo text excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "बी 78 से 111\nएम ब्लॉक\nमार्किट\nआर, एस, ई\nब्लॉक",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_012",
@@ -116,12 +116,12 @@
       "ai_draft_text": "जी के\nएन्क्लेव-1\nपम्पोश",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "जी के\nएन्क्लेव-1\nपम्पोश",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_018",
@@ -144,12 +144,12 @@
       "ai_draft_text": "बकाने बंधु\nकृषी केन्द्र\nसेवाग्राम",
       "ai_draft_confidence": "low",
       "ai_draft_notes": "Third line is small hand-painted text; spelling uncertain.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "बकाने बंधु\nकृषी केन्द्र\nसेवाग्राम",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_021",
@@ -172,12 +172,12 @@
       "ai_draft_text": "रात में लो बीम\nका प्रयोग करें।",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "रात में लो बीम\nका प्रयोग करें।",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_026",
@@ -200,12 +200,12 @@
       "ai_draft_text": "वाहन गति\nसीमा में ही चलाएँ",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "वाहन गति\nसीमा में ही चलाएँ",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_028",
@@ -228,12 +228,12 @@
       "ai_draft_text": "पोलायकलाँ",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "पोलायकलाँ",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_033",
@@ -256,12 +256,12 @@
       "ai_draft_text": "जिलाधिकारी\nआवास",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "जिलाधिकारी\nआवास",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_034",
@@ -284,12 +284,12 @@
       "ai_draft_text": "धर्मशाला\nठहरने के लिए हॉल\nएवं रजाई-गद्दे व कम्बल\nउपलब्ध हैं।",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "First word of line 3 ('एवं') uncertain; phone number excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "धर्मशाला\nठहरने के लिए हॉल\nएवं रजाई-गद्दे व कम्बल\nउपलब्ध हैं।",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_050",
@@ -312,12 +312,12 @@
       "ai_draft_text": "धौला कुँआ\nबड़ा बाजार, राजेन्द्र नगर\nWEA कॉलोनी, करोलबाग",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Line 3 mixes Latin 'WEA' with Devanagari as printed.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "धौला कुँआ\nबड़ा बाजार, राजेन्द्र नगर\nWEA कॉलोनी, करोलबाग",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_051",
@@ -340,12 +340,12 @@
       "ai_draft_text": "कनॉट प्लेस\nधौला कुँआ",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Logo caption excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "कनॉट प्लेस\nधौला कुँआ",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_052",
@@ -368,12 +368,12 @@
       "ai_draft_text": "इस सड़क पर\nवाहन खड़ा करना\nवर्जित है।",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Small logo caption excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "इस सड़क पर\nवाहन खड़ा करना\nवर्जित है।",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_057",
@@ -396,12 +396,12 @@
       "ai_draft_text": "डी एस सी रोड\nभंगेल\nबरोला",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "डी एस सी रोड\nभंगेल\nबरोला",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_058",
@@ -418,18 +418,18 @@
         614.95,
         516.6,
         1461.42,
-        864.0
+        864
       ],
       "split": "held_out",
       "ai_draft_text": "हौजरी कॉम्प्लेक्स\nभंगेल\nसेक्टर\n80,81,88\nसूरजपुर",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Two-panel board; reading order left panel then right panel; 'हौजरी' spelling uncertain.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "हौजरी कॉम्प्लेक्स\nभंगेल\nसेक्टर\n80,81,88\nसूरजपुर",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_059",
@@ -452,12 +452,12 @@
       "ai_draft_text": "औद्योगिक क्षेत्र, फेज-II\nहौजरी कॉम्प्लैक्स",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Sign is tilted and sun-glared.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "औद्योगिक क्षेत्र, फेज-II\nहौजरी कॉम्प्लैक्स",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_069",
@@ -480,12 +480,12 @@
       "ai_draft_text": "बेंगलूर\nलोक निर्माण विभाग",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "बेंगलूर\nलोक निर्माण विभाग",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_071",
@@ -508,12 +508,12 @@
       "ai_draft_text": "प्रधानमंत्री\nग्राम सड़क योजना\nभारी वाहन\nप्रवेश निषेध\nअधिकतम् वाहन भार-12 टन",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Tiny bottom footer line excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "प्रधानमंत्री\nग्राम सड़क योजना\nभारी वाहन\nप्रवेश निषेध\nअधिकतम् वाहन भार-12 टन",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_072",
@@ -536,12 +536,12 @@
       "ai_draft_text": "हुडा ऑफिस कॉम्प्लेक्स",
       "ai_draft_confidence": "low",
       "ai_draft_notes": "First word is hard to read ('हुडा' assumed).",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "हुडा ऑफिस कॉम्प्लेक्स",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_073",
@@ -564,12 +564,12 @@
       "ai_draft_text": "टाउन पार्क",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "टाउन पार्क",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_082",
@@ -592,12 +592,12 @@
       "ai_draft_text": "सेक्टर 28",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "सेक्टर 28",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_090",
@@ -620,12 +620,12 @@
       "ai_draft_text": "नौएडा\nसै०-149, 152, 151, 153",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Stickers and handwritten phone number excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "नौएडा\nसै०-149, 152, 151, 153",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_091",
@@ -648,12 +648,12 @@
       "ai_draft_text": "सैक्टर 168",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "सैक्टर 168",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_103",
@@ -676,12 +676,12 @@
       "ai_draft_text": "कृप्या गेट के सामने\nवाहन खड़ा न करें!\nयह आम रास्ता नही है,\nकृप्या बड़ा गेट बन्द करके जायें",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Hand-painted; first line partly overpainted.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "कृप्या गेट के सामने\nवाहन खड़ा न करें!\nयह आम रास्ता नही है,\nकृप्या बड़ा गेट बन्द करके जायें",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_107",
@@ -704,12 +704,12 @@
       "ai_draft_text": "फरीदाबाद गैस पावर स्टेशन\n3.5 कि. मी.",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Logo caption excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "फरीदाबाद गैस पावर स्टेशन\n3.5 कि. मी.",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_124",
@@ -732,12 +732,12 @@
       "ai_draft_text": "लोकल शॉपिंग\nसेन्टर",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Part of the sign is in shadow.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "लोकल शॉपिंग\nसेन्टर",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_125",
@@ -760,12 +760,12 @@
       "ai_draft_text": "लाजपत नगर",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "लाजपत नगर",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_130",
@@ -788,12 +788,12 @@
       "ai_draft_text": "ग्रेटर नोएडा\nएक्सप्रेसवे\nसैक्टर- 92 से 105\n108, 124 से 135",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "ग्रेटर नोएडा\nएक्सप्रेसवे\nसैक्टर- 92 से 105\n108, 124 से 135",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_138",
@@ -816,12 +816,12 @@
       "ai_draft_text": "सर्किट हाउस\nसेक्टर 16-ए",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "सर्किट हाउस\nसेक्टर 16-ए",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_140",
@@ -838,18 +838,18 @@
         435.21,
         40.6,
         3030.3,
-        1950.0
+        1950
       ],
       "split": "held_out",
       "ai_draft_text": "निवास\nनरेन्द्र गुप्ता\nविधायक फरीदाबाद\nमकान नं. 1126, सेक्टर 15, फरीदाबाद\nनगर निगम फरीदाबाद",
       "ai_draft_confidence": "medium",
       "ai_draft_notes": "Small logos excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "निवास\nनरेन्द्र गुप्ता\nविधायक फरीदाबाद\nमकान नं. 1126, सेक्टर 15, फरीदाबाद\nनगर निगम फरीदाबाद",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     },
     {
       "image_id": "sb_172",
@@ -872,12 +872,25 @@
       "ai_draft_text": "न्यू फ्रेन्ड्स कॉलोनी",
       "ai_draft_confidence": "high",
       "ai_draft_notes": "Logo caption excluded.",
-      "verification_status": "ai_draft_pending_human_verification",
-      "verified_text": null,
-      "reviewer": null,
-      "reviewer_type": null,
-      "verification_date": null,
-      "reviewer_notes": null
+      "verification_status": "human_verified_user_attested",
+      "verified_text": "न्यू फ्रेन्ड्स कॉलोनी",
+      "reviewer": "Project owner (human; name not provided)",
+      "reviewer_type": "human_user_attestation",
+      "verification_date": "2026-10-25",
+      "reviewer_notes": "Project owner replied \"all correct\" for all 31 drafts after viewing them in the review page. No per-record notes or corrections were recorded. verified_text equals the AI draft text unchanged."
     }
-  ]
+  ],
+  "verified_count": 31,
+  "human_verification": {
+    "verified_by": "Project owner (human; name not provided)",
+    "method": "Owner viewed each sign next to the AI draft in a local review page and replied \"all correct\".",
+    "date": "2026-10-25",
+    "limitations": [
+      "Reviewer name not recorded",
+      "Reviewer language fluency not recorded",
+      "No per-record notes or corrections recorded",
+      "All drafts accepted unchanged, including 2 flagged low-confidence and 11 medium-confidence drafts",
+      "Single reviewer, no second-reviewer check"
+    ]
+  }
 }

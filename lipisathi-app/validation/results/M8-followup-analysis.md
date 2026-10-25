@@ -47,7 +47,9 @@ Suggested next dataset (needs the project owner to supply the photos):
 - For each image: the file under `validation/dataset/`, a record in `metadata/ground-truth.json` with `verified_text` (target-script sign text only) and a reviewer, and a crop box in `metadata/sign-crop-regions.json`.
 - Then re-run `m8-preprocessing-ocr.spec.js` and the three calculate/render scripts. Note: the scripts currently check for exactly 12 records, so the count check must be updated when the dataset grows.
 
-## 5b. Update: signboard Hindi extension (status: waiting for human verification)
+## 5b. Update: signboard Hindi extension (status: complete, see `M8-signboard-analysis.md`)
+
+Update 2026-10-25: the project owner attested all 31 AI-drafted texts as correct (no corrections; name and fluency not recorded), and the metrics were computed. Results and caveats are in `M8-signboard-analysis.md` and `M8-signboard-cer-wer.md`. The paragraph below describes the state before verification and is kept as history.
 
 A downloaded signboard dataset (200 photos with signboard bounding boxes, no transcriptions, no license file) was triaged visually. It contains **no Telugu**, roughly 60 images with Hindi and about a third Tamil. From it, 31 clean single-box Hindi signs were selected (one photo per physical sign; 21 dev, 10 held-out, split rule fixed before OCR).
 
