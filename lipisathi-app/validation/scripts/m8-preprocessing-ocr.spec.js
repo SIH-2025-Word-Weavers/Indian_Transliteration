@@ -6,7 +6,7 @@
  * calculate-preprocessing-cer-wer.js against ground-truth.json verified_text.
  *
  * Variants (fixed before any run):  region {full, sign_crop} x processing {original, grayscale,
- * contrast_stretch, upscale2x}.  Everything else (Tesseract.js 4.1.4, tessdata_fast, hin/tel,
+ * contrast_stretch, upscale2x}.  Everything else (Tesseract.js 4.1.4, the default CDN model path (.../4.0.0/; once mislabelled tessdata_fast), hin/tel,
  * ocrService.js) is the unmodified app. Preprocessing happens in the browser canvas (no new deps,
  * nothing written to disk).
  *

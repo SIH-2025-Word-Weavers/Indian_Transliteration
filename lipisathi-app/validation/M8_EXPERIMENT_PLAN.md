@@ -32,7 +32,7 @@ M7 established a browser-based OCR validation baseline using the existing Tesser
 **Environment:**
 - Browser: Chromium (Playwright)
 - Tesseract.js: v4.1.4
-- Traineddata: CDN-hosted `tessdata_fast`
+- Traineddata: CDN-hosted, the library default path `tessdata.projectnaptha.com/4.0.0/` (**correction, 2026-10-26:** earlier labelled `tessdata_fast`; that was wrong, the default is neither `_fast` nor `_best`, verified by file size in `results/M8-closure-summary.md`)
 - Languages: Hindi (`hin`), Telugu (`tel`)
 
 **Limitation:** M7 reported Tesseract confidence but did not calculate OCR accuracy (CER/WER) due to lack of ground truth.
@@ -231,7 +231,7 @@ Test candidate preprocessing techniques to determine which improve OCR quality (
 ✅ **Keep constant across all experiments:**
 - Same 12-image validation dataset
 - Same OCR engine: Tesseract.js v4.1.4
-- Same traineddata: CDN-hosted `tessdata_fast`
+- Same traineddata: CDN-hosted default path `.../4.0.0/` (earlier mislabelled `tessdata_fast`; see the correction above)
 - Same OCR languages: `hin` (Hindi), `tel` (Telugu)
 - Same ground-truth transcriptions
 - Same CER/WER calculation method
@@ -455,7 +455,7 @@ Results may not apply to:
 
 **Keep constant:**
 - Version: 4.1.4
-- Traineddata source: CDN-hosted `tessdata_fast`
+- Traineddata source: CDN-hosted default path `.../4.0.0/` (earlier mislabelled `tessdata_fast`; see the correction above)
 - Language codes: `hin`, `tel`
 - Worker initialization: existing `createWorker()` configuration
 
@@ -536,7 +536,7 @@ Based on OCR literature and M7 baseline confidence (18-54%):
 
 - **Repository:** https://github.com/naptha/tesseract.js
 - **Version:** 4.1.4 (used in LipiSathi)
-- **Traineddata:** `tessdata_fast` (CDN-hosted)
+- **Traineddata:** default CDN path `.../4.0.0/` (earlier mislabelled `tessdata_fast`; see the correction above)
 
 ### OCR Quality Metrics
 
@@ -559,6 +559,8 @@ Based on OCR literature and M7 baseline confidence (18-54%):
 **Follow-up done:** script-filtered CER/WER on existing OCR output (`results/M8-followup-analysis.md`). The ground truth was already target-script-only, so no new ground truth was needed for the 12 images.  
 **Signboard Hindi extension done (31 signs, owner-attested):** see `results/M8-signboard-analysis.md`. Sign crop lowered CER on 31/31 images; crop CER is still above 1 and word recall about 25%.  
 **Telugu signs done (14 signs, owner-attested):** see `results/M8-telugu-signs-analysis.md`. Telugu OCR read almost nothing (1-2 of 41 reference words; 3 crops returned no text); crop still lowers CER.  
-**Next Step:** Test a stronger Telugu model (`tessdata_best`) and crop upscaling, which need an OCR configuration change and your go-ahead; have a fluent Telugu reviewer re-check the 4 uncertain references. Earlier note: 30-50 verified real sign photos (see section 5 of `results/M8-followup-analysis.md`). After that: sign isolation (user crop or text-region detection) and untested preprocessing methods
+**Closure experiments done (2026-10-26):** `tessdata_best`/`_fast`/default models and crop upscaling on both sets (270 runs), and a direct EXIF check. Neither a heavier model nor upscaling helped; the EXIF hypothesis is withdrawn; the model label `tessdata_fast` used earlier was wrong. See `results/M8-closure-summary.md`.  
+**M8 status: CLOSED (exploratory first round).** Output: a measurement harness plus evidence that sign isolation is the dominant lever and that Telugu is unproven.  
+**Next Step (M9, needs your go-ahead because it changes `src/`):** user-selected sign crop before OCR, then `hin+eng` and page-segmentation tests inside the crop; have a fluent Telugu reviewer re-check the 4 uncertain references and collect more Telugu photos. Do not add whole-image grayscale/contrast/upscale preprocessing, and do not switch to `tessdata_best` on this evidence.
 
-**Last Updated:** 2026-10-17
+**Last Updated:** 2026-10-26

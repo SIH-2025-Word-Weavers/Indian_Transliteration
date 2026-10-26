@@ -6,7 +6,7 @@ Figures: `M8-signboard-cer-wer.md` / `.json` (reproduce: `node validation/script
 
 - 31 Hindi signs (21 dev, 10 held-out) from an external signboard dataset; the split rule was fixed before any OCR ran. One photo per physical sign. Signboard boxes come from the dataset's own annotations.
 - References: `verified_text`, which the project owner **attested** on 2026-10-25 by replying "all correct" to all 31 AI-drafted texts, with no corrections. Reviewer name, fluency and per-record notes were not recorded. The drafts were written by an AI from visual reading, including 2 flagged low-confidence and 11 medium-confidence ones, so reading errors in the references cannot be ruled out.
-- Three pre-specified variants through the unmodified OCR pipeline (Tesseract.js 4.1.4, `hin`, tessdata_fast): `full__raw` (file as uploaded), `full__oriented` (EXIF rotation applied, otherwise untouched), `sign_box__oriented` (dataset box +5% padding).
+- Three pre-specified variants through the unmodified OCR pipeline (Tesseract.js 4.1.4, `hin`, the app's default model, the CDN `.../4.0.0/` path; earlier labelled "tessdata_fast", which was wrong, see `M8-closure-summary.md`): `full__raw` (file as uploaded), `full__oriented` (EXIF rotation applied, otherwise untouched), `sign_box__oriented` (dataset box +5% padding).
 - No preprocessing methods were compared here, and no variant was chosen using the held-out set.
 
 ## 2. Results (corpus-level error rates, lower is better; not accuracy)
@@ -31,7 +31,9 @@ By split, CER for `sign_box__oriented` versus `full__oriented`: dev 6.12 vs 159.
 - **Whole-photo recall (24%) is not a recognition result.** Those runs emit about 5,000 characters per image, so many words match by chance. The crop reaches the same recall with 25 times less output, which suggests the crop is the one actually reading words, but this was not tested directly.
 - **"Reading errors" (substitutions + deletions) are misleading here:** 379/967 for the crop versus 79/967 for whole photos. Long garbage outputs offer many chance alignments that hide misses. Do not read this as the whole photo reading better.
 
-## 5. EXIF orientation (hypothesis, not proven)
+## 5. EXIF orientation (hypothesis; **withdrawn after a direct test, see `M8-closure-summary.md`**)
+
+> **Update:** the direct test found no support for this hypothesis. `full__raw` vs `full__oriented` is also confounded by the canvas re-encode (images with no rotation needed differ too), and an EXIF-stripped copy (identical pixels) did worse than the original upload. The paragraph below is kept as originally written.
 
 At nearly identical output length (157k vs 155k characters), `full__oriented` recovered more reference words than `full__raw` (46 vs 29 of 194), and 19 of 31 images had a lower CER. That is consistent with the OCR path not applying EXIF rotation to phone photos (180 of the 200 dataset files carry EXIF orientation 6). I did not inspect how the app or Tesseract.js handles EXIF, so this needs a direct check (for example uploading a rotated copy and comparing) before anyone acts on it. It would matter for real users, because phone photos usually carry EXIF rotation.
 
@@ -39,10 +41,10 @@ At nearly identical output length (157k vs 155k characters), `full__oriented` re
 
 1. **Make sign isolation the next product-facing step**: prototype a user-selected crop before OCR (no new model needed), and evaluate it on this set. That changes `src/`, so it needs your go-ahead.
 2. **Test inside the crop, where the remaining error lives**, with controlled single-factor comparisons: adding English to the language (`hin+eng`) so English lines stop becoming Devanagari noise; page-segmentation modes; `tessdata_best`; tighter crops. These need OCR configuration changes, so they are out of scope until you approve.
-3. **Check EXIF handling directly** (section 5) and normalise orientation before OCR if confirmed.
+3. ~~Check EXIF handling directly~~ **Done: not confirmed, see `M8-closure-summary.md`.** Any future in-app crop should be drawn from the decoded image, which is EXIF-correct in browsers.
 4. **Still missing: Telugu.** The signboard dataset has none. About 15-20 Telugu photos with human-verified text are needed to say anything about Telugu.
 5. Do not add grayscale/contrast/upscale preprocessing (unchanged from the earlier analysis).
 
 ## 7. Limitations
 
-31 Hindi signs, one run per cell, no confidence intervals. References are AI-drafted and owner-attested without recorded fluency or corrections. Boxes were produced by the dataset authors, not by an automatic detector, so real-world performance depends on how the app would obtain a crop. Crops still contain English text and sign borders. Tesseract `tessdata_fast`, system Chrome (not bundled Chromium). Dataset license is unknown. Exploratory results, not a benchmark.
+31 Hindi signs, one run per cell, no confidence intervals. References are AI-drafted and owner-attested without recorded fluency or corrections. Boxes were produced by the dataset authors, not by an automatic detector, so real-world performance depends on how the app would obtain a crop. Crops still contain English text and sign borders. Tesseract default model (see the note in section 1), system Chrome (not bundled Chromium). Dataset license is unknown. Exploratory results, not a benchmark.

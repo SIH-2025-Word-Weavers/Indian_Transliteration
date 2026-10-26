@@ -6,7 +6,7 @@ Figures: `M8-telugu-signs-cer-wer.md` / `.json` (reproduce: `SB_META=telugu-sign
 
 - 14 clean Telugu signs selected from a 50-image folder (the rest were book covers, newspaper pages, a map, etc., or had dense or illegible text). 10 dev, 4 held-out; the split rule was fixed before OCR. No repeat photos of the same sign.
 - References: the project owner **attested** all 14 AI-drafted texts as correct on 2026-10-25 ("all are correct"), with no corrections. Name, **Telugu fluency (asked, not stated)** and per-record notes were not recorded. The drafts were written by an AI reading the images, including 3 medium-confidence and 1 low-confidence ones (`te_013`, `te_030`, `te_048`, `te_044`), so reading errors in the references cannot be ruled out.
-- Two variants through the unmodified OCR pipeline (Tesseract.js 4.1.4, `tel`, tessdata_fast): whole image as uploaded, and sign box. **The boxes are AI-estimated** (no annotations came with these images) and were checked by overlaying on each image. No EXIF rotation applies to these files.
+- Two variants through the unmodified OCR pipeline (Tesseract.js 4.1.4, `tel`, the app's default model, the CDN `.../4.0.0/` path; earlier labelled "tessdata_fast", which was wrong, see `M8-closure-summary.md`): whole image as uploaded, and sign box. **The boxes are AI-estimated** (no annotations came with these images) and were checked by overlaying on each image. No EXIF rotation applies to these files.
 - The images are small (mostly 1280 px wide), so the sign crops are small too (for example 1101x132 for a one-line board).
 
 ## 2. Results (corpus-level error rates, lower is better; not accuracy)
@@ -27,14 +27,14 @@ Held-out (4 signs): CER 15.00 (whole) vs 4.16 (box); 0 of 6 reference words foun
 
 ## 4. What this does not show
 
-- It does not show Tesseract can never read Telugu signs. Possible contributing factors, none tested: tessdata_fast is the smallest model; small low-resolution crops; no upscaling or other image preparation; Telugu conjunct characters; the web-sourced, compressed images.
+- It does not show Tesseract can never read Telugu signs. Possible contributing factors (the model size and 2x upscale were tested afterwards, see `M8-closure-summary.md`: neither helped): the model; small low-resolution crops; no upscaling or other image preparation; Telugu conjunct characters; the web-sourced, compressed images.
 - The 14 signs are mostly station and place-name boards, not a representative sample of Telugu signage. No confidence intervals, one run per cell.
 - AI-drafted references with owner attestation and no recorded fluency (section 1).
 
 ## 5. Recommendations
 
 1. **Do not claim the app reads Telugu signs reliably.** On this evidence it does not, and the app's Telugu capability should be described as unproven, with this limitation stated.
-2. **Test the OCR model next, not preprocessing**, for Telugu: `tessdata_best` (or another Telugu model) versus `tessdata_fast`, on this same set. This needs an OCR configuration change, so it needs your go-ahead. This is the most likely lever, because the crops are already isolated.
+2. **Test the OCR model next, not preprocessing**, for Telugu: `tessdata_best` (or another Telugu model) versus the default, on this same set. **Done afterwards in the closure experiments: `tessdata_best` did not help (see `M8-closure-summary.md`).**
 3. **A small, cheap test on these same crops: upscaling the crop** (small inputs may be the problem). Earlier Hindi whole-image tests showed upscaling hurt, but small crops differ, so test it separately and do not assume.
 4. Add a **character-level partial-credit measure** for Telugu (for example, per-sign character match rate after removing joiners) in addition to exact word recall, so near-misses are visible.
 5. Get a **fluent Telugu reviewer** to re-check the 4 medium/low-confidence references and record their name and fluency.

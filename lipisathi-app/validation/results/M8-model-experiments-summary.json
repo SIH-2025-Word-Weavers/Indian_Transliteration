@@ -1,0 +1,354 @@
+{
+  "phase": "M8 closure - model and crop-upscale experiments",
+  "note": "Exploratory; references are owner-attested; n is small; CER/WER here are not accuracy.",
+  "languages": {
+    "telugu": {
+      "rows": [
+        {
+          "model": "default",
+          "variant": "sign_box__oriented",
+          "CER": 2.91195,
+          "filtered_CER": 2.108475,
+          "reading_errors": 146,
+          "ref_chars_filtered": 295,
+          "word_recall": 0.02439,
+          "words_found": 1,
+          "ref_words": 41,
+          "chars_emitted": 1001,
+          "mean_conf": 24.142857,
+          "mean_time_s": 0.299286
+        },
+        {
+          "model": "default",
+          "variant": "sign_box__upscale2x",
+          "CER": 8.374214,
+          "filtered_CER": 6.284746,
+          "reading_errors": 121,
+          "ref_chars_filtered": 295,
+          "word_recall": 0.097561,
+          "words_found": 4,
+          "ref_words": 41,
+          "chars_emitted": 2807,
+          "mean_conf": 32,
+          "mean_time_s": 0.707143
+        },
+        {
+          "model": "fast",
+          "variant": "sign_box__oriented",
+          "CER": 2.720126,
+          "filtered_CER": 2.247458,
+          "reading_errors": 135,
+          "ref_chars_filtered": 295,
+          "word_recall": 0.04878,
+          "words_found": 2,
+          "ref_words": 41,
+          "chars_emitted": 944,
+          "mean_conf": 16.642857,
+          "mean_time_s": 0.275714
+        },
+        {
+          "model": "fast",
+          "variant": "sign_box__upscale2x",
+          "CER": 8.144654,
+          "filtered_CER": 6.8,
+          "reading_errors": 114,
+          "ref_chars_filtered": 295,
+          "word_recall": 0.073171,
+          "words_found": 3,
+          "ref_words": 41,
+          "chars_emitted": 2739,
+          "mean_conf": 22.142857,
+          "mean_time_s": 0.62
+        },
+        {
+          "model": "best",
+          "variant": "sign_box__oriented",
+          "CER": 2.95283,
+          "filtered_CER": 2.267797,
+          "reading_errors": 145,
+          "ref_chars_filtered": 295,
+          "word_recall": 0.02439,
+          "words_found": 1,
+          "ref_words": 41,
+          "chars_emitted": 1012,
+          "mean_conf": 24.857143,
+          "mean_time_s": 0.391429
+        },
+        {
+          "model": "best",
+          "variant": "sign_box__upscale2x",
+          "CER": 8.283019,
+          "filtered_CER": 6.430508,
+          "reading_errors": 118,
+          "ref_chars_filtered": 295,
+          "word_recall": 0.097561,
+          "words_found": 4,
+          "ref_words": 41,
+          "chars_emitted": 2782,
+          "mean_conf": 28.785714,
+          "mean_time_s": 0.91
+        }
+      ],
+      "paired": [
+        {
+          "comparison": "best vs default (crop)",
+          "metric": "unfiltered",
+          "lower": 3,
+          "higher": 4,
+          "equal": 7
+        },
+        {
+          "comparison": "best vs fast (crop)",
+          "metric": "unfiltered",
+          "lower": 3,
+          "higher": 8,
+          "equal": 3
+        },
+        {
+          "comparison": "default vs fast (crop)",
+          "metric": "unfiltered",
+          "lower": 4,
+          "higher": 5,
+          "equal": 5
+        },
+        {
+          "comparison": "default: upscale2x vs crop",
+          "metric": "unfiltered",
+          "lower": 0,
+          "higher": 11,
+          "equal": 3
+        },
+        {
+          "comparison": "fast: upscale2x vs crop",
+          "metric": "unfiltered",
+          "lower": 1,
+          "higher": 10,
+          "equal": 3
+        },
+        {
+          "comparison": "best: upscale2x vs crop",
+          "metric": "unfiltered",
+          "lower": 0,
+          "higher": 10,
+          "equal": 4
+        },
+        {
+          "comparison": "best vs default (crop)",
+          "metric": "filtered",
+          "lower": 2,
+          "higher": 6,
+          "equal": 6
+        },
+        {
+          "comparison": "best vs fast (crop)",
+          "metric": "filtered",
+          "lower": 5,
+          "higher": 6,
+          "equal": 3
+        },
+        {
+          "comparison": "default vs fast (crop)",
+          "metric": "filtered",
+          "lower": 7,
+          "higher": 4,
+          "equal": 3
+        },
+        {
+          "comparison": "default: upscale2x vs crop",
+          "metric": "filtered",
+          "lower": 1,
+          "higher": 9,
+          "equal": 4
+        },
+        {
+          "comparison": "fast: upscale2x vs crop",
+          "metric": "filtered",
+          "lower": 1,
+          "higher": 9,
+          "equal": 4
+        },
+        {
+          "comparison": "best: upscale2x vs crop",
+          "metric": "filtered",
+          "lower": 1,
+          "higher": 10,
+          "equal": 3
+        }
+      ]
+    },
+    "hindi": {
+      "rows": [
+        {
+          "model": "default",
+          "variant": "sign_box__oriented",
+          "CER": 5.417212,
+          "filtered_CER": 4.420889,
+          "reading_errors": 379,
+          "ref_chars_filtered": 967,
+          "word_recall": 0.252577,
+          "words_found": 49,
+          "ref_words": 194,
+          "chars_emitted": 6349,
+          "mean_conf": 30.741935,
+          "mean_time_s": 0.773548
+        },
+        {
+          "model": "default",
+          "variant": "sign_box__upscale2x",
+          "CER": 9.262862,
+          "filtered_CER": 7.713547,
+          "reading_errors": 381,
+          "ref_chars_filtered": 967,
+          "word_recall": 0.216495,
+          "words_found": 42,
+          "ref_words": 194,
+          "chars_emitted": 10425,
+          "mean_conf": 27.516129,
+          "mean_time_s": 1.579677
+        },
+        {
+          "model": "fast",
+          "variant": "sign_box__oriented",
+          "CER": 5.618335,
+          "filtered_CER": 4.069286,
+          "reading_errors": 418,
+          "ref_chars_filtered": 967,
+          "word_recall": 0.190722,
+          "words_found": 37,
+          "ref_words": 194,
+          "chars_emitted": 6534,
+          "mean_conf": 30.419355,
+          "mean_time_s": 0.684839
+        },
+        {
+          "model": "fast",
+          "variant": "sign_box__upscale2x",
+          "CER": 9.664172,
+          "filtered_CER": 7.049638,
+          "reading_errors": 411,
+          "ref_chars_filtered": 967,
+          "word_recall": 0.195876,
+          "words_found": 38,
+          "ref_words": 194,
+          "chars_emitted": 10840,
+          "mean_conf": 29.290323,
+          "mean_time_s": 1.595806
+        },
+        {
+          "model": "best",
+          "variant": "sign_box__oriented",
+          "CER": 5.228251,
+          "filtered_CER": 4.410548,
+          "reading_errors": 377,
+          "ref_chars_filtered": 967,
+          "word_recall": 0.226804,
+          "words_found": 44,
+          "ref_words": 194,
+          "chars_emitted": 6134,
+          "mean_conf": 28.645161,
+          "mean_time_s": 1.199032
+        },
+        {
+          "model": "best",
+          "variant": "sign_box__upscale2x",
+          "CER": 9.037418,
+          "filtered_CER": 7.844881,
+          "reading_errors": 367,
+          "ref_chars_filtered": 967,
+          "word_recall": 0.195876,
+          "words_found": 38,
+          "ref_words": 194,
+          "chars_emitted": 10202,
+          "mean_conf": 27.032258,
+          "mean_time_s": 2.188387
+        }
+      ],
+      "paired": [
+        {
+          "comparison": "best vs default (crop)",
+          "metric": "unfiltered",
+          "lower": 19,
+          "higher": 10,
+          "equal": 2
+        },
+        {
+          "comparison": "best vs fast (crop)",
+          "metric": "unfiltered",
+          "lower": 25,
+          "higher": 4,
+          "equal": 2
+        },
+        {
+          "comparison": "default vs fast (crop)",
+          "metric": "unfiltered",
+          "lower": 20,
+          "higher": 7,
+          "equal": 4
+        },
+        {
+          "comparison": "default: upscale2x vs crop",
+          "metric": "unfiltered",
+          "lower": 10,
+          "higher": 19,
+          "equal": 2
+        },
+        {
+          "comparison": "fast: upscale2x vs crop",
+          "metric": "unfiltered",
+          "lower": 6,
+          "higher": 24,
+          "equal": 1
+        },
+        {
+          "comparison": "best: upscale2x vs crop",
+          "metric": "unfiltered",
+          "lower": 8,
+          "higher": 23,
+          "equal": 0
+        },
+        {
+          "comparison": "best vs default (crop)",
+          "metric": "filtered",
+          "lower": 13,
+          "higher": 14,
+          "equal": 4
+        },
+        {
+          "comparison": "best vs fast (crop)",
+          "metric": "filtered",
+          "lower": 15,
+          "higher": 14,
+          "equal": 2
+        },
+        {
+          "comparison": "default vs fast (crop)",
+          "metric": "filtered",
+          "lower": 12,
+          "higher": 18,
+          "equal": 1
+        },
+        {
+          "comparison": "default: upscale2x vs crop",
+          "metric": "filtered",
+          "lower": 9,
+          "higher": 19,
+          "equal": 3
+        },
+        {
+          "comparison": "fast: upscale2x vs crop",
+          "metric": "filtered",
+          "lower": 8,
+          "higher": 21,
+          "equal": 2
+        },
+        {
+          "comparison": "best: upscale2x vs crop",
+          "metric": "filtered",
+          "lower": 8,
+          "higher": 21,
+          "equal": 2
+        }
+      ]
+    }
+  }
+}

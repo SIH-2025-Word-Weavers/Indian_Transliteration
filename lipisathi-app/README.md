@@ -7,8 +7,17 @@
 
 ## Current Status
 
-**Phase 1 — Milestone 5: Testing, Language Rules, and Validation** ✓  
-**Phase 2 — Milestone 6: Real-World Validation** 🚧 (In Progress)
+| Milestone | Scope | Status |
+|---|---|---|
+| M1 | React/Vite app, image upload | ✅ |
+| M2 | Hindi + Telugu OCR (Tesseract.js) | ✅ |
+| M3 | Script detection (9 Indic scripts) | ✅ |
+| M4 | Transliteration (9 scripts, hub-and-spoke) | ✅ |
+| M5 | Hindi rules, automated tests, notebook parity | ✅ |
+| M6 | Real-world validation dataset and structure | ✅ |
+| M7 | Browser OCR validation (OCR runs end to end; no accuracy measured) | ✅ |
+| M8 | OCR quality experiments: CER/WER with human-attested references, preprocessing, crop, model and EXIF tests | ✅ first round closed (exploratory) |
+| M9+ | See "Next Milestones" | planned |
 
 The application now supports:
 * Image upload
@@ -19,7 +28,12 @@ The application now supports:
 * Comprehensive automated testing (Vitest)
 * Extracted text and transliteration display with copy to clipboard functionality
 
-**Real-world street-sign validation (M6) is in progress — dataset acquisition phase.**
+**What the OCR measurements say so far (M8, exploratory, small datasets, not accuracy):**
+
+* Running OCR on a whole phone photo is unusable (thousands of garbage characters). **Isolating the sign first is by far the biggest lever**: on 31 Hindi signs the sign crop had a much lower error rate than the whole photo on 31 of 31 images and ran about 25x faster. The app currently has **no sign isolation step**, so users should upload a tightly cropped sign.
+* Even on a clean crop, Hindi OCR recovers only about a quarter of the reference words, and **Telugu OCR read almost nothing on 14 test signs**. Telugu street-sign support is unproven.
+* A heavier model (`tessdata_best`), grayscale/contrast, and 2x upscaling did **not** help in these tests.
+* Details and caveats: [`validation/results/M8-closure-summary.md`](validation/results/M8-closure-summary.md).
 
 ---
 
@@ -287,14 +301,14 @@ Tests prioritize **meaningful behavior coverage** over arbitrary coverage metric
 
 ## Real-World Validation
 
-**Milestone 6 (M6)** focuses on representative real-world validation using actual street-sign images.
+**M6 (validation structure), M7 (browser OCR validation) and M8 (OCR quality experiments)** use real street-sign photos. The photos are external with unknown licenses and are **not stored in this repository**; only metadata, reference texts and OCR output are committed.
 
 ### Validation Scope
 
 - **OCR Languages:** Hindi and Telugu (currently supported in M2)
-- **Dataset Size:** ~16 images (8 Hindi + 8 Telugu)
-- **Methodology:** Manual validation using existing UI
-- **Purpose:** Observe actual behavior, identify limitations, establish baseline
+- **M7:** browser OCR run on a small image set; confirms the pipeline runs, no accuracy.
+- **M8:** 12 Hindi/Telugu images (manual crops), 31 Hindi signs, 14 Telugu signs; CER/WER against owner-attested, AI-drafted references; preprocessing, crop, OCR-model and EXIF experiments (270 runs for the model/upscale tests).
+- **Purpose:** Observe actual behavior, identify limitations, find which levers matter. Not a benchmark.
 
 ### Validation Documentation
 
@@ -307,13 +321,11 @@ See [`validation/README.md`](validation/README.md) for:
 
 ### Current Status
 
-**M6 Phase 1:** ✅ Validation structure and documentation complete  
-**M6 Phase 2:** 🚧 Dataset acquisition in progress  
-**M6 Phase 3:** ⏳ Pending — Actual validation with images  
+**M6:** ✅ validation structure and documentation  
+**M7:** ✅ browser OCR validation (results in `validation/results/browser-ocr-proof.md`; its "tessdata_fast" label is inaccurate, see the M8 closure summary)  
+**M8:** ✅ first round closed. Start at [`validation/results/M8-closure-summary.md`](validation/results/M8-closure-summary.md); the plan and status are in [`validation/M8_EXPERIMENT_PLAN.md`](validation/M8_EXPERIMENT_PLAN.md).
 
-**Results:** To be recorded after dataset acquisition and validation testing
-
-**Important:** M6 is a representative real-world validation on a small dataset, NOT a comprehensive evaluation or production benchmark.
+**Important:** the results are exploratory measurements on small, non-representative datasets with AI-drafted, owner-attested references (not independently verified). CER/WER are error rates, not accuracy. Do not quote them as accuracy figures.
 
 ---
 
@@ -346,19 +358,19 @@ The original LipiSathi application (recovered from `feature/lipisathi-recovery` 
 
 ## Next Milestones
 
-* **Milestone 6:** Real-World Street-Sign Validation 🚧 (In Progress — dataset acquisition)
-* **Milestone 7:** Additional OCR Languages (Tamil, Malayalam, Kannada, etc.)
-* **Milestone 8:** Camera Integration and Real-Time Processing
+M1–M8 are done (see "Current Status"). The proposed roadmap below is **a plan, not a commitment**; each item that changes `src/` needs a go-ahead. It follows the SIH idea steps: Capture → Recognize → Transliterate → Display → Speak.
 
-Future enhancements:
-* Real-world image dataset validation
-* Additional OCR languages (Tamil, Malayalam, Kannada, Bengali, Gujarati, Marathi, Punjabi, Odia, English)
-* Camera integration
-* Image preprocessing
-* Batch processing
-* PWA/offline support
-* Text-to-Speech (TTS)
-* Mobile packaging (Capacitor)
+| Milestone | Proposed scope | SIH step | Why |
+|---|---|---|---|
+| M9 | Sign isolation in the app (user-selected crop before OCR), then `hin+eng` and page-segmentation tests inside the crop; collect more verified Telugu photos | Recognize | Biggest measured lever (M8); the app has no sign isolation |
+| M10 | Offline/PWA: bundle the OCR worker, core and models locally | all | The SIH idea promises "internet free"; today everything loads from a CDN |
+| M11 | Camera capture | Capture | |
+| M12 | Text-to-speech | Speak | |
+| M13 | Automatic text/sign detection (replaces the manual crop) | Recognize | |
+| M14 | More OCR languages (Tamil first) | Recognize | |
+| M15 | Mobile packaging (Capacitor), final testing, demo | all | |
+
+Not yet true of the current app, whatever the pitch says: no camera, no automatic sign detection, no speech, not offline, no mobile build, and Telugu street-sign OCR is unproven (see the M8 closure summary).
 
 ---
 
