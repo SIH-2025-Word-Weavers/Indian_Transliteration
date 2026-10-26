@@ -5,25 +5,36 @@ import OCRResult from './components/OCRResult'
 import { runOCR } from './services/ocrService'
 import { detectScript } from './services/scriptDetectionService'
 import { transliterate, getSupportedScripts } from './services/transliterationService'
+import { cropToDataUrl } from './utils/cropImage'
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [crop, setCrop] = useState(null) // { rect, displaySize } in CSS px of the shown image, or null = whole image
   const [selectedLanguage, setSelectedLanguage] = useState('hin')
   const [ocrResult, setOcrResult] = useState(null)
+  const [ocrImage, setOcrImage] = useState(null) // the exact image that was sent to OCR (whole or cropped)
   const [detectedScript, setDetectedScript] = useState(null)
   const [targetScript, setTargetScript] = useState(null)
   const [transliterationResult, setTransliterationResult] = useState(null)
+  const [lineTransliterations, setLineTransliterations] = useState(null)
   const [isProcessing, setIsProcessing] = useState(false)
   const [ocrProgress, setOcrProgress] = useState('')
   const [error, setError] = useState(null)
 
-  const handleImageSelect = (imageData) => {
-    setSelectedImage(imageData)
+  const resetResults = () => {
     setOcrResult(null)
+    setOcrImage(null)
     setDetectedScript(null)
     setTargetScript(null)
     setTransliterationResult(null)
+    setLineTransliterations(null)
     setError(null)
+  }
+
+  const handleImageSelect = (imageData) => {
+    setSelectedImage(imageData)
+    setCrop(null)
+    resetResults()
   }
 
   const handleLanguageChange = (language) => {
@@ -38,22 +49,21 @@ function App() {
 
     setIsProcessing(true)
     setOcrProgress('Starting OCR...')
-    setOcrResult(null)
-    setDetectedScript(null)
-    setTargetScript(null)
-    setTransliterationResult(null)
-    setError(null)
+    resetResults()
 
     try {
-      const result = await runOCR(
-        selectedImage,
-        selectedLanguage,
-        (message) => setOcrProgress(message)
-      )
+      let input = selectedImage
+      if (crop && crop.rect) {
+        setOcrProgress('Cropping selection...')
+        input = (await cropToDataUrl(selectedImage, crop.rect, crop.displaySize)).dataUrl
+      }
+
+      const result = await runOCR(input, selectedLanguage, (message) => setOcrProgress(message))
 
       // Detect script from OCR text
       const script = detectScript(result.text)
 
+      setOcrImage(input)
       setOcrResult(result)
       setDetectedScript(script)
       setOcrProgress('')
@@ -71,16 +81,17 @@ function App() {
     }
 
     setTargetScript(selectedTargetScript)
-    
+
     try {
-      const result = transliterate(
-        ocrResult.text,
-        selectedTargetScript,
-        detectedScript
-      )
+      const result = transliterate(ocrResult.text, selectedTargetScript, detectedScript)
       setTransliterationResult(result)
+      // Per-line text for the image overlay
+      setLineTransliterations(
+        (ocrResult.lines || []).map((line) => transliterate(line.text, selectedTargetScript, detectedScript))
+      )
     } catch (err) {
       setTransliterationResult(`❌ Transliteration failed: ${err.message}`)
+      setLineTransliterations(null)
     }
   }
 
@@ -94,13 +105,15 @@ function App() {
 
       <main className={styles.main}>
         <div className={styles.status}>
-          Phase 1 — Milestone 4: Transliteration
+          Capture → Recognize → Transliterate → Display → Speak · works offline
         </div>
 
         <ImageUploader
           onImageSelect={handleImageSelect}
           onLanguageChange={handleLanguageChange}
           onOCRStart={handleOCRStart}
+          onCropChange={setCrop}
+          crop={crop}
           isProcessing={isProcessing}
         />
 
@@ -117,11 +130,13 @@ function App() {
           </div>
         )}
 
-        <OCRResult 
-          result={ocrResult} 
+        <OCRResult
+          result={ocrResult}
+          ocrImage={ocrImage}
           detectedScript={detectedScript}
           targetScript={targetScript}
           transliterationResult={transliterationResult}
+          lineTransliterations={lineTransliterations}
           onTransliterate={handleTransliterate}
           supportedScripts={getSupportedScripts()}
         />

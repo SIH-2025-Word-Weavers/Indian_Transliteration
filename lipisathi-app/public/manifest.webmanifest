@@ -1,0 +1,14 @@
+{
+  "name": "LipiSathi - Street Sign Transliteration",
+  "short_name": "LipiSathi",
+  "description": "Read street signs with OCR and transliterate between Indian scripts. Works offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

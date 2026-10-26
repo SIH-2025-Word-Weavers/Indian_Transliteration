@@ -35,10 +35,14 @@ const OUT = process.env.SB_OUT || resolve(validationDir, `results/M8-model-${MOD
 const LIMIT = process.env.SB_LIMIT ? parseInt(process.env.SB_LIMIT, 10) : META.records.length;
 const RECORDS = META.records.slice(0, LIMIT);
 const LANG_CODE = { Hindi: 'hin', Telugu: 'tel' };
-const VARIANTS = [
+const ALL_VARIANTS = [
   { id: 'sign_box__oriented', scale: 1 },
   { id: 'sign_box__upscale2x', scale: 2 },
 ];
+// SB_ONLY_VARIANT=sign_box__oriented restricts the run; SB_LANG_SUFFIX=+eng adds English to the OCR language
+// (an <option> is injected into the page's select, because the app UI offers single languages only).
+const VARIANTS = process.env.SB_ONLY_VARIANT ? ALL_VARIANTS.filter((v) => v.id === process.env.SB_ONLY_VARIANT) : ALL_VARIANTS;
+const LANG_SUFFIX = process.env.SB_LANG_SUFFIX || '';
 const MODEL_DIR = process.env.M8_MODEL_DIR || '/tmp/m8models';
 const TARGET = { default: null, fast: 'https://tessdata.projectnaptha.com/4.0.0_fast', best: 'https://tessdata.projectnaptha.com/4.0.0_best' }[MODEL];
 
@@ -116,7 +120,16 @@ test.describe('M8 closure: model and upscale experiments', () => {
           run.input_width = out.width; run.input_height = out.height;
           await fileInput.setInputFiles({ name: `${rec.image_id}__${variant.id}.png`, mimeType: 'image/png', buffer: Buffer.from(out.b64, 'base64') });
           await page.waitForSelector('img[alt="Selected"]', { timeout: 30000 });
-          await page.locator('#languageSelect').selectOption(LANG_CODE[rec.language]);
+          if (LANG_SUFFIX) {
+            const value = `${LANG_CODE[rec.language]}${LANG_SUFFIX}`;
+            await page.evaluate((v) => {
+              const sel = document.querySelector('#languageSelect');
+              if (![...sel.options].some((o) => o.value === v)) sel.add(new Option(v, v));
+            }, value);
+            await page.locator('#languageSelect').selectOption(value);
+          } else {
+            await page.locator('#languageSelect').selectOption(LANG_CODE[rec.language]);
+          }
           const runButton = page.locator('button:has-text("Run OCR")');
           await expect(runButton).toBeEnabled();
           await runButton.click();

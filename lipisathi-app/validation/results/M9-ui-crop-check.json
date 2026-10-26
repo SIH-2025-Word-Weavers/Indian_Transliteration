@@ -1,0 +1,181 @@
+{
+  "phase": "M9 UI crop check on EXIF-6 photos",
+  "rows": [
+    {
+      "image_id": "sb_006",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 1920,
+        "h": 4160
+      },
+      "oriented_size_in_metadata": [
+        1920,
+        4160
+      ],
+      "ui_ocr_input": {
+        "w": 688,
+        "h": 567
+      },
+      "harness_ocr_input": {
+        "w": 686,
+        "h": 568
+      },
+      "width_ratio": 1.0029154518950438,
+      "height_ratio": 0.9982394366197183
+    },
+    {
+      "image_id": "sb_011",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 3096,
+        "h": 4128
+      },
+      "oriented_size_in_metadata": [
+        3096,
+        4128
+      ],
+      "ui_ocr_input": {
+        "w": 918,
+        "h": 1251
+      },
+      "harness_ocr_input": {
+        "w": 918,
+        "h": 1251
+      },
+      "width_ratio": 1,
+      "height_ratio": 1
+    },
+    {
+      "image_id": "sb_012",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 3096,
+        "h": 4128
+      },
+      "oriented_size_in_metadata": [
+        3096,
+        4128
+      ],
+      "ui_ocr_input": {
+        "w": 1095,
+        "h": 1488
+      },
+      "harness_ocr_input": {
+        "w": 1095,
+        "h": 1488
+      },
+      "width_ratio": 1,
+      "height_ratio": 1
+    },
+    {
+      "image_id": "sb_021",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 1184,
+        "h": 2560
+      },
+      "oriented_size_in_metadata": [
+        1184,
+        2560
+      ],
+      "ui_ocr_input": {
+        "w": 340,
+        "h": 280
+      },
+      "harness_ocr_input": {
+        "w": 340,
+        "h": 280
+      },
+      "width_ratio": 1,
+      "height_ratio": 1
+    },
+    {
+      "image_id": "sb_026",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 1184,
+        "h": 2560
+      },
+      "oriented_size_in_metadata": [
+        1184,
+        2560
+      ],
+      "ui_ocr_input": {
+        "w": 290,
+        "h": 238
+      },
+      "harness_ocr_input": {
+        "w": 290,
+        "h": 240
+      },
+      "width_ratio": 1,
+      "height_ratio": 0.9916666666666667
+    },
+    {
+      "image_id": "sb_033",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 3120,
+        "h": 4160
+      },
+      "oriented_size_in_metadata": [
+        3120,
+        4160
+      ],
+      "ui_ocr_input": {
+        "w": 710,
+        "h": 678
+      },
+      "harness_ocr_input": {
+        "w": 709,
+        "h": 679
+      },
+      "width_ratio": 1.001410437235543,
+      "height_ratio": 0.9985272459499264
+    },
+    {
+      "image_id": "sb_034",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 3120,
+        "h": 4160
+      },
+      "oriented_size_in_metadata": [
+        3120,
+        4160
+      ],
+      "ui_ocr_input": {
+        "w": 993,
+        "h": 1185
+      },
+      "harness_ocr_input": {
+        "w": 992,
+        "h": 1186
+      },
+      "width_ratio": 1.001008064516129,
+      "height_ratio": 0.9991568296795953
+    },
+    {
+      "image_id": "sb_050",
+      "exif_orientation": 6,
+      "displayed_natural_size": {
+        "w": 3096,
+        "h": 4128
+      },
+      "oriented_size_in_metadata": [
+        3096,
+        4128
+      ],
+      "ui_ocr_input": {
+        "w": 1060,
+        "h": 1472
+      },
+      "harness_ocr_input": {
+        "w": 1058,
+        "h": 1472
+      },
+      "width_ratio": 1.001890359168242,
+      "height_ratio": 1
+    }
+  ]
+}

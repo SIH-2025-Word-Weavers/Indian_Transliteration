@@ -1,10 +1,28 @@
 import { useState } from 'react';
 import styles from './OCRResult.module.css';
+import TransliterationOverlay from './TransliterationOverlay';
+import { speak, getSpeechLangForScript, isSpeechSupported } from '../services/speechService';
 
-function OCRResult({ result, detectedScript, targetScript, transliterationResult, onTransliterate, supportedScripts }) {
+function OCRResult({
+  result,
+  ocrImage,
+  detectedScript,
+  targetScript,
+  transliterationResult,
+  lineTransliterations,
+  onTransliterate,
+  supportedScripts,
+}) {
   const [copied, setCopied] = useState(false);
   const [copiedTranslit, setCopiedTranslit] = useState(false);
   const [selectedTarget, setSelectedTarget] = useState('');
+  const [speechMessage, setSpeechMessage] = useState('');
+
+  const handleSpeak = async (text, script) => {
+    setSpeechMessage('');
+    const res = await speak(text, getSpeechLangForScript(script));
+    if (!res.ok) setSpeechMessage(res.reason);
+  };
 
   if (!result) {
     return null;
@@ -76,6 +94,15 @@ function OCRResult({ result, detectedScript, targetScript, transliterationResult
           >
             {copied ? '✓ Copied' : 'Copy Text'}
           </button>
+          {isSpeechSupported() && canTransliterate && result.text.trim() && (
+            <button
+              onClick={() => handleSpeak(result.text, detectedScript)}
+              className={styles.copyButton}
+              title="Read the recognized text aloud"
+            >
+              🔊 Speak
+            </button>
+          )}
         </div>
         <div className={styles.text}>
           {result.text || '(No text detected)'}
@@ -130,10 +157,26 @@ function OCRResult({ result, detectedScript, targetScript, transliterationResult
                     {copiedTranslit ? '✓ Copied' : 'Copy Text'}
                   </button>
                 )}
+                {!transliterationResult.startsWith('❌') && isSpeechSupported() && (
+                  <button
+                    onClick={() => handleSpeak(transliterationResult, targetScript)}
+                    className={styles.copyButton}
+                    title="Read the transliterated text aloud"
+                  >
+                    🔊 Speak
+                  </button>
+                )}
               </div>
               <div className={transliterationResult.startsWith('❌') ? styles.errorText : styles.text}>
                 {transliterationResult}
               </div>
+              {speechMessage && <p className={styles.warningText}>🔇 {speechMessage}</p>}
+              {!transliterationResult.startsWith('❌') && lineTransliterations && result.lines?.length > 0 && (
+                <>
+                  <p className={styles.textLabel}>Transliteration on the image:</p>
+                  <TransliterationOverlay image={ocrImage} lines={result.lines} transliterations={lineTransliterations} />
+                </>
+              )}
             </div>
           )}
         </div>

@@ -17,6 +17,33 @@
 .uploadSection {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cameraLabel {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #8e44ad;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.cameraLabel:hover {
+  background: #7d3c98;
+}
+
+.notice {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background: #fff7e6;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #7a4b00;
 }
 
 .fileInput {
@@ -41,7 +68,8 @@
 .languageSection {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
 .label {
@@ -50,7 +78,9 @@
 }
 
 .select {
-  flex: 1;
+  flex: 1 1 12rem;
+  min-width: 0;
+  max-width: 100%;
   padding: 0.5rem;
   border: 2px solid #ddd;
   border-radius: 4px;

@@ -1,0 +1,579 @@
+{
+  "phase": "M8 follow-up - signboard CER/WER",
+  "reference_source": "telugu-signs-ground-truth.json verified_text",
+  "verification_provenance": {
+    "verified_by": "Project owner (human; name not provided)",
+    "method": "Owner viewed each sign next to the AI draft in a local review page and replied \"all are correct\".",
+    "date": "2026-10-25",
+    "limitations": [
+      "Reviewer name not recorded",
+      "Reviewer Telugu fluency asked but not stated",
+      "No per-record notes or corrections recorded",
+      "All drafts accepted unchanged, including 3 medium-confidence and 1 low-confidence draft (te_013, te_030, te_048, te_044)",
+      "Single reviewer, no second-reviewer check",
+      "Sign crop boxes are AI-estimated, not from dataset annotations"
+    ]
+  },
+  "variants": [
+    {
+      "id": "sign_box__oriented",
+      "all": {
+        "unfiltered": {
+          "runs": 14,
+          "ref_chars": 318,
+          "ref_words": 41,
+          "corpus_CER": 2.660377,
+          "corpus_WER": 5.853659,
+          "insertions": 663,
+          "deletions": 81,
+          "substitutions": 102,
+          "reading_errors_sub_plus_del": 183,
+          "ocr_chars_emitted": 900,
+          "word_recall": 0.04878,
+          "words_found": 2
+        },
+        "filtered": {
+          "runs": 14,
+          "ref_chars": 295,
+          "ref_words": 40,
+          "corpus_CER": 1.223729,
+          "corpus_WER": 2.575,
+          "insertions": 194,
+          "deletions": 84,
+          "substitutions": 83,
+          "reading_errors_sub_plus_del": 167,
+          "ocr_chars_emitted": 405,
+          "word_recall": 0.1,
+          "words_found": 4
+        }
+      },
+      "dev": {
+        "unfiltered": {
+          "runs": 10,
+          "ref_chars": 268,
+          "ref_words": 35,
+          "corpus_CER": 2.425373,
+          "corpus_WER": 5.571429,
+          "insertions": 512,
+          "deletions": 63,
+          "substitutions": 75,
+          "reading_errors_sub_plus_del": 138,
+          "ocr_chars_emitted": 717,
+          "word_recall": 0.057143,
+          "words_found": 2
+        },
+        "filtered": {
+          "runs": 10,
+          "ref_chars": 245,
+          "ref_words": 34,
+          "corpus_CER": 1.110204,
+          "corpus_WER": 2.294118,
+          "insertions": 152,
+          "deletions": 62,
+          "substitutions": 58,
+          "reading_errors_sub_plus_del": 120,
+          "ocr_chars_emitted": 335,
+          "word_recall": 0.117647,
+          "words_found": 4
+        }
+      },
+      "held_out": {
+        "unfiltered": {
+          "runs": 4,
+          "ref_chars": 50,
+          "ref_words": 6,
+          "corpus_CER": 3.92,
+          "corpus_WER": 7.5,
+          "insertions": 151,
+          "deletions": 18,
+          "substitutions": 27,
+          "reading_errors_sub_plus_del": 45,
+          "ocr_chars_emitted": 183,
+          "word_recall": 0,
+          "words_found": 0
+        },
+        "filtered": {
+          "runs": 4,
+          "ref_chars": 50,
+          "ref_words": 6,
+          "corpus_CER": 1.78,
+          "corpus_WER": 4.166667,
+          "insertions": 42,
+          "deletions": 22,
+          "substitutions": 25,
+          "reading_errors_sub_plus_del": 47,
+          "ocr_chars_emitted": 70,
+          "word_recall": 0,
+          "words_found": 0
+        }
+      },
+      "mean_confidence": 31.285714,
+      "mean_time_s": 0.497143
+    }
+  ],
+  "comparisons": [],
+  "per_run": [
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_002",
+      "split": "dev",
+      "ocr_confidence": 0,
+      "time_s": 0.53,
+      "unfiltered": {
+        "ref_chars": 10,
+        "ocr_chars": 0,
+        "char_edits": 10,
+        "sub": 0,
+        "del": 10,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 10,
+        "ocr_chars": 0,
+        "char_edits": 10,
+        "sub": 0,
+        "del": 10,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_007",
+      "split": "dev",
+      "ocr_confidence": 34,
+      "time_s": 0.71,
+      "unfiltered": {
+        "ref_chars": 7,
+        "ocr_chars": 84,
+        "char_edits": 81,
+        "sub": 4,
+        "del": 0,
+        "ins": 77,
+        "CER": 11.571429,
+        "ref_words": 1,
+        "word_edits": 29,
+        "WER": 29,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 7,
+        "ocr_chars": 41,
+        "char_edits": 38,
+        "sub": 4,
+        "del": 0,
+        "ins": 34,
+        "CER": 5.428571,
+        "ref_words": 1,
+        "word_edits": 15,
+        "WER": 15,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_010",
+      "split": "held_out",
+      "ocr_confidence": 26,
+      "time_s": 0.35,
+      "unfiltered": {
+        "ref_chars": 11,
+        "ocr_chars": 24,
+        "char_edits": 23,
+        "sub": 10,
+        "del": 0,
+        "ins": 13,
+        "CER": 2.090909,
+        "ref_words": 1,
+        "word_edits": 5,
+        "WER": 5,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 11,
+        "ocr_chars": 8,
+        "char_edits": 11,
+        "sub": 8,
+        "del": 3,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 3,
+        "WER": 3,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_013",
+      "split": "dev",
+      "ocr_confidence": 46,
+      "time_s": 0.68,
+      "unfiltered": {
+        "ref_chars": 126,
+        "ocr_chars": 99,
+        "char_edits": 81,
+        "sub": 20,
+        "del": 44,
+        "ins": 17,
+        "CER": 0.642857,
+        "ref_words": 18,
+        "word_edits": 18,
+        "WER": 1,
+        "words_found": 1
+      },
+      "filtered": {
+        "ref_chars": 104,
+        "ocr_chars": 67,
+        "char_edits": 44,
+        "sub": 7,
+        "del": 37,
+        "ins": 0,
+        "CER": 0.423077,
+        "ref_words": 17,
+        "word_edits": 14,
+        "WER": 0.823529,
+        "words_found": 3
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_015",
+      "split": "dev",
+      "ocr_confidence": 37,
+      "time_s": 0.74,
+      "unfiltered": {
+        "ref_chars": 6,
+        "ocr_chars": 126,
+        "char_edits": 124,
+        "sub": 4,
+        "del": 0,
+        "ins": 120,
+        "CER": 20.666667,
+        "ref_words": 1,
+        "word_edits": 47,
+        "WER": 47,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 6,
+        "ocr_chars": 31,
+        "char_edits": 29,
+        "sub": 4,
+        "del": 0,
+        "ins": 25,
+        "CER": 4.833333,
+        "ref_words": 1,
+        "word_edits": 11,
+        "WER": 11,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_016",
+      "split": "held_out",
+      "ocr_confidence": 0,
+      "time_s": 0.28,
+      "unfiltered": {
+        "ref_chars": 8,
+        "ocr_chars": 7,
+        "char_edits": 8,
+        "sub": 7,
+        "del": 1,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 8,
+        "ocr_chars": 6,
+        "char_edits": 8,
+        "sub": 6,
+        "del": 2,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_030",
+      "split": "dev",
+      "ocr_confidence": 50,
+      "time_s": 0.35,
+      "unfiltered": {
+        "ref_chars": 35,
+        "ocr_chars": 61,
+        "char_edits": 34,
+        "sub": 6,
+        "del": 1,
+        "ins": 27,
+        "CER": 0.971429,
+        "ref_words": 4,
+        "word_edits": 10,
+        "WER": 2.5,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 34,
+        "ocr_chars": 46,
+        "char_edits": 20,
+        "sub": 4,
+        "del": 2,
+        "ins": 14,
+        "CER": 0.588235,
+        "ref_words": 4,
+        "word_edits": 7,
+        "WER": 1.75,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_032",
+      "split": "dev",
+      "ocr_confidence": 0,
+      "time_s": 0.18,
+      "unfiltered": {
+        "ref_chars": 8,
+        "ocr_chars": 0,
+        "char_edits": 8,
+        "sub": 0,
+        "del": 8,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 8,
+        "ocr_chars": 0,
+        "char_edits": 8,
+        "sub": 0,
+        "del": 8,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_040",
+      "split": "held_out",
+      "ocr_confidence": 0,
+      "time_s": 0.19,
+      "unfiltered": {
+        "ref_chars": 17,
+        "ocr_chars": 0,
+        "char_edits": 17,
+        "sub": 0,
+        "del": 17,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 2,
+        "word_edits": 2,
+        "WER": 1,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 17,
+        "ocr_chars": 0,
+        "char_edits": 17,
+        "sub": 0,
+        "del": 17,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 2,
+        "word_edits": 2,
+        "WER": 1,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_044",
+      "split": "dev",
+      "ocr_confidence": 59,
+      "time_s": 0.42,
+      "unfiltered": {
+        "ref_chars": 24,
+        "ocr_chars": 82,
+        "char_edits": 65,
+        "sub": 7,
+        "del": 0,
+        "ins": 58,
+        "CER": 2.708333,
+        "ref_words": 2,
+        "word_edits": 20,
+        "WER": 10,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 24,
+        "ocr_chars": 32,
+        "char_edits": 15,
+        "sub": 7,
+        "del": 0,
+        "ins": 8,
+        "CER": 0.625,
+        "ref_words": 2,
+        "word_edits": 3,
+        "WER": 1.5,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_045",
+      "split": "dev",
+      "ocr_confidence": 45,
+      "time_s": 0.74,
+      "unfiltered": {
+        "ref_chars": 7,
+        "ocr_chars": 137,
+        "char_edits": 135,
+        "sub": 5,
+        "del": 0,
+        "ins": 130,
+        "CER": 19.285714,
+        "ref_words": 1,
+        "word_edits": 46,
+        "WER": 46,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 7,
+        "ocr_chars": 43,
+        "char_edits": 41,
+        "sub": 5,
+        "del": 0,
+        "ins": 36,
+        "CER": 5.857143,
+        "ref_words": 1,
+        "word_edits": 15,
+        "WER": 15,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_046",
+      "split": "held_out",
+      "ocr_confidence": 35,
+      "time_s": 1.01,
+      "unfiltered": {
+        "ref_chars": 14,
+        "ocr_chars": 152,
+        "char_edits": 148,
+        "sub": 10,
+        "del": 0,
+        "ins": 138,
+        "CER": 10.571429,
+        "ref_words": 2,
+        "word_edits": 37,
+        "WER": 18.5,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 14,
+        "ocr_chars": 56,
+        "char_edits": 53,
+        "sub": 11,
+        "del": 0,
+        "ins": 42,
+        "CER": 3.785714,
+        "ref_words": 2,
+        "word_edits": 19,
+        "WER": 9.5,
+        "words_found": 0
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_048",
+      "split": "dev",
+      "ocr_confidence": 37,
+      "time_s": 0.53,
+      "unfiltered": {
+        "ref_chars": 38,
+        "ocr_chars": 115,
+        "char_edits": 99,
+        "sub": 22,
+        "del": 0,
+        "ins": 77,
+        "CER": 2.605263,
+        "ref_words": 5,
+        "word_edits": 20,
+        "WER": 4,
+        "words_found": 1
+      },
+      "filtered": {
+        "ref_chars": 38,
+        "ocr_chars": 73,
+        "char_edits": 60,
+        "sub": 25,
+        "del": 0,
+        "ins": 35,
+        "CER": 1.578947,
+        "ref_words": 5,
+        "word_edits": 10,
+        "WER": 2,
+        "words_found": 1
+      }
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_049",
+      "split": "dev",
+      "ocr_confidence": 69,
+      "time_s": 0.25,
+      "unfiltered": {
+        "ref_chars": 7,
+        "ocr_chars": 13,
+        "char_edits": 13,
+        "sub": 7,
+        "del": 0,
+        "ins": 6,
+        "CER": 1.857143,
+        "ref_words": 1,
+        "word_edits": 3,
+        "WER": 3,
+        "words_found": 0
+      },
+      "filtered": {
+        "ref_chars": 7,
+        "ocr_chars": 2,
+        "char_edits": 7,
+        "sub": 2,
+        "del": 5,
+        "ins": 0,
+        "CER": 1,
+        "ref_words": 1,
+        "word_edits": 1,
+        "WER": 1,
+        "words_found": 0
+      }
+    }
+  ]
+}

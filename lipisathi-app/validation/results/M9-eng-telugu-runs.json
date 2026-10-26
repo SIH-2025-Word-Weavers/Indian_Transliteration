@@ -1,0 +1,205 @@
+{
+  "phase": "M8 closure - model and upscale experiments",
+  "model": "default",
+  "served_locally": {
+    "models": "/tmp/m8models/default/ (curl-downloaded, same URLs the app requests)",
+    "worker_and_core": "node_modules copies of tesseract.js 4.1.4 and tesseract.js-core 4.0.4"
+  },
+  "non_local_responses_seen": [],
+  "traineddata_requests": {
+    "http://localhost:5173/tessdata/tel.traineddata.gz": 1744266,
+    "http://localhost:5173/tessdata/eng.traineddata.gz": 10923060
+  },
+  "note": "Raw OCR output only. Model swapped by request interception in the test; the app code is unchanged.",
+  "variants": [
+    {
+      "id": "sign_box__oriented",
+      "scale": 1
+    }
+  ],
+  "record_count": 14,
+  "runs": [
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_002",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 496,
+      "input_height": 264,
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.53,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_007",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 704,
+      "input_height": 629,
+      "ocr_status": "success",
+      "ocr_text": "| W క్‌ 3\ng పం e త. గ\n+ క్ట\n\n&5 క\n\nక. ఉట...\n\nట్ట న్‌...\n\nక...\n\nPR కకత\n\nL\n\nట్ట శ\n1 ఎ |\n\ng\n\ng g",
+      "ocr_confidence": 34,
+      "ocr_processing_time_seconds": 0.71,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_010",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 716,
+      "input_height": 330,
+      "ocr_status": "success",
+      "ocr_text": "ఏ మునక ML\nIéoiﬁgaﬁ‘d@o క",
+      "ocr_confidence": 26,
+      "ocr_processing_time_seconds": 0.35,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_013",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 1280,
+      "input_height": 738,
+      "ocr_status": "success",
+      "ocr_text": "e - . B\nశ్రీనివాసనగశ్‌ బ్లాంక్‌కాలనీ 6% 1 \"\nక్‌ (ఎస్‌.బి.ఐ.30: ౩) R\n5l గుత్తికాండ సత్యనారాయణలవిధి -",
+      "ocr_confidence": 46,
+      "ocr_processing_time_seconds": 0.68,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_015",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 870,
+      "input_height": 352,
+      "ocr_status": "success",
+      "ocr_text": "Y., A\\ 7 ;> క... S RGN | e, SR\n5 AN స్‌ స గ్య కాల\n. \"౩౫ i ;\n<N SR i |\nకా | | బే sl\nసం, 2\nB %\n!:fs |\nన పు | 4 e\\ ¢ i P 1 / Qe %",
+      "ocr_confidence": 37,
+      "ocr_processing_time_seconds": 0.74,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_016",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 980,
+      "input_height": 441,
+      "ocr_status": "success",
+      "ocr_text": "౪౯౮౯౦౧.",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.28,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_030",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 1101,
+      "input_height": 132,
+      "ocr_status": "success",
+      "ocr_text": "తూరాకుల వెంకయ 7 6మెమోరియతల్‌\nగ 2.6 6.6 ఆర్రమారు S0 ఖమ్మం(జిని",
+      "ocr_confidence": 50,
+      "ocr_processing_time_seconds": 0.35,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_032",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 902,
+      "input_height": 193,
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.18,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_040",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 623,
+      "input_height": 88,
+      "ocr_status": "success",
+      "ocr_text": "",
+      "ocr_confidence": 0,
+      "ocr_processing_time_seconds": 0.19,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_044",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 694,
+      "input_height": 298,
+      "ocr_status": "success",
+      "ocr_text": "| iz \\\n| SEEGIALL |\n| et - |\n| 88501 = 0౧౧౮౧౬ 3\n| ప్రసాఖపుమ్నం. = సేకింప్రాబాట్‌ |",
+      "ocr_confidence": 59,
+      "ocr_processing_time_seconds": 0.42,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_045",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 638,
+      "input_height": 242,
+      "ocr_status": "success",
+      "ocr_text": "ట్రే.\n== e oy\n= క్ట\n= = ని * e’ .\nSt W RS - శ\n- గాం \"ౌ నా . R .\n- P 1... స్‌\nప ౨ , || ౧౦౨౮ UNAVAR\n& 11౪ JUURAYAL =\n. 1211 TV గ ౫ STl కా N",
+      "ocr_confidence": 45,
+      "ocr_processing_time_seconds": 0.74,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_046",
+      "split": "held_out",
+      "language": "Telugu",
+      "input_width": 616,
+      "input_height": 220,
+      "ocr_status": "success",
+      "ocr_text": "తా ఆట కుం ర ఎట...\nల 0 Vil L దలకు\n\n| 24X ౧10౮ ఇ౪౮౪\n| కుట 'ళ (0౧౪6౪ ఆ''తో'తో\n\n& T CINMLUACLIAE R B2\n,.ubi ఇ - SIMHACHALAM\n=1 || ప్రయ 2 1|| NORTH\n\n—=\" l’_. L.",
+      "ocr_confidence": 35,
+      "ocr_processing_time_seconds": 1.01,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_048",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 1280,
+      "input_height": 374,
+      "ocr_status": "success",
+      "ocr_text": "| ల) 222. క్రాక్‌ (దేవాదాయ ధర్వాణోక్‌ క \"\nశ్రీ రామరకృవ్ణాపు [కల సరూర్‌నగర్‌(మం), ‘ :, 500102.\nR s 4. _ ౨౫౩౨౩౩౩౭౯౩ ]",
+      "ocr_confidence": 37,
+      "ocr_processing_time_seconds": 0.53,
+      "error": null
+    },
+    {
+      "variant_id": "sign_box__oriented",
+      "image_id": "te_049",
+      "split": "dev",
+      "language": "Telugu",
+      "input_width": 381,
+      "input_height": 254,
+      "ocr_status": "success",
+      "ocr_text": "నో TIRUPATI I",
+      "ocr_confidence": 69,
+      "ocr_processing_time_seconds": 0.25,
+      "error": null
+    }
+  ]
+}

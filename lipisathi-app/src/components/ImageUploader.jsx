@@ -1,29 +1,33 @@
 import { useState } from 'react';
 import styles from './ImageUploader.module.css';
+import CropSelector from './CropSelector';
+import { OCR_LANGUAGES, getLanguage } from '../config/languages';
 
-function ImageUploader({ onImageSelect, onLanguageChange, onOCRStart, isProcessing }) {
+function ImageUploader({
+  onImageSelect,
+  onLanguageChange,
+  onOCRStart,
+  onCropChange,
+  crop,
+  isProcessing,
+}) {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [selectedLanguage, setSelectedLanguage] = useState('hin');
-  const [imageFile, setImageFile] = useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      // Validate file type
-      if (!file.type.startsWith('image/')) {
-        alert('Please select a valid image file');
-        return;
-      }
-
-      // Create preview URL
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setPreviewUrl(event.target.result);
-        setImageFile(event.target.result);
-        onImageSelect(event.target.result);
-      };
-      reader.readAsDataURL(file);
+    e.target.value = ''; // allow choosing the same file again
+    if (!file) return;
+    if (!file.type.startsWith('image/')) {
+      alert('Please select a valid image file');
+      return;
     }
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setPreviewUrl(event.target.result);
+      onImageSelect(event.target.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleLanguageChange = (e) => {
@@ -32,11 +36,7 @@ function ImageUploader({ onImageSelect, onLanguageChange, onOCRStart, isProcessi
     onLanguageChange(lang);
   };
 
-  const handleRunOCR = () => {
-    if (imageFile) {
-      onOCRStart();
-    }
-  };
+  const language = getLanguage(selectedLanguage);
 
   return (
     <div className={styles.container}>
@@ -49,6 +49,19 @@ function ImageUploader({ onImageSelect, onLanguageChange, onOCRStart, isProcessi
             id="imageInput"
             type="file"
             accept="image/*"
+            onChange={handleFileChange}
+            className={styles.fileInput}
+            disabled={isProcessing}
+          />
+          <label htmlFor="cameraInput" className={styles.cameraLabel}>
+            Take Photo
+          </label>
+          {/* On phones this opens the camera directly; on desktops it falls back to a file picker. */}
+          <input
+            id="cameraInput"
+            type="file"
+            accept="image/*"
+            capture="environment"
             onChange={handleFileChange}
             className={styles.fileInput}
             disabled={isProcessing}
@@ -66,14 +79,29 @@ function ImageUploader({ onImageSelect, onLanguageChange, onOCRStart, isProcessi
             className={styles.select}
             disabled={isProcessing}
           >
-            <option value="hin">Hindi (हिन्दी)</option>
-            <option value="tel">Telugu (తెలుగు)</option>
+            {OCR_LANGUAGES.map((l) => (
+              <option key={l.code} value={l.code}>
+                {l.label}
+                {l.status === 'experimental' ? ' - not tested' : ''}
+              </option>
+            ))}
           </select>
         </div>
 
+        {language?.status === 'experimental' && (
+          <p className={styles.notice}>
+            The {language.label.split(' (')[0]} model is bundled but was not tested on real signs; results may be poor.
+          </p>
+        )}
+        {language?.code === 'tel' && (
+          <p className={styles.notice}>
+            Telugu sign reading is unproven: in our tests the model read almost nothing from street signs.
+          </p>
+        )}
+
         <button
-          onClick={handleRunOCR}
-          disabled={!imageFile || isProcessing}
+          onClick={onOCRStart}
+          disabled={!previewUrl || isProcessing}
           className={styles.runButton}
         >
           {isProcessing ? 'Processing...' : 'Run OCR'}
@@ -83,7 +111,12 @@ function ImageUploader({ onImageSelect, onLanguageChange, onOCRStart, isProcessi
       {previewUrl && (
         <div className={styles.preview}>
           <p className={styles.previewLabel}>Selected Image:</p>
-          <img src={previewUrl} alt="Selected" className={styles.previewImage} />
+          <CropSelector
+            src={previewUrl}
+            crop={crop}
+            disabled={isProcessing}
+            onCropChange={onCropChange}
+          />
         </div>
       )}
     </div>

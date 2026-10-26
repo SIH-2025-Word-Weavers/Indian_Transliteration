@@ -1,157 +1,98 @@
 import { createWorker } from 'tesseract.js';
+import { getLanguageName as languageName } from '../config/languages';
 
 /**
- * Run OCR on an image file using Tesseract.js v4.1.4
- * 
- * @param {File|string} imageFile - Image file or data URL
- * @param {string} language - Language code ('hin' or 'tel')
+ * OCR with Tesseract.js 4.1.4, fully offline: the worker, the WASM core and the language models are served
+ * from this app's own origin (public/tesseract, public/tessdata), not from a CDN. They are copied/downloaded by
+ * `npm run setup:ocr` (also run automatically before `dev` and `build`).
+ *
+ * The models are the same `.../4.0.0/` files the app used to fetch from tessdata.projectnaptha.com
+ * (verified by file size in validation/results/M8-closure-summary.md), so OCR output is unchanged.
+ */
+
+const DEBUG = typeof localStorage !== 'undefined' && localStorage.getItem('lipisathi:debug') === '1';
+const log = (...args) => DEBUG && console.log('[LipiSathi OCR]', ...args);
+
+/** Absolute URL of a bundled asset. Absolute because Tesseract.js starts its worker from a Blob URL. */
+export function assetUrl(path) {
+  const base = typeof document !== 'undefined' ? document.baseURI : 'http://localhost/';
+  return new URL(path, base).href.replace(/\/$/, '');
+}
+
+export function getOcrPaths() {
+  return {
+    workerPath: assetUrl('tesseract/worker.min.js'),
+    corePath: assetUrl('tesseract/'), // directory: Tesseract.js picks the SIMD or plain core
+    langPath: assetUrl('tessdata'),
+  };
+}
+
+/**
+ * Run OCR on an image.
+ *
+ * @param {File|string} imageFile - Image file, Blob or data URL
+ * @param {string} language - Tesseract language code ('hin', 'tel', ...) or a '+' combination ('hin+eng')
  * @param {function} onProgress - Progress callback (message: string)
- * @returns {Promise<{text: string, confidence: number, processingTime: number}>}
+ * @returns {Promise<{text: string, confidence: number, processingTime: number, lines: Array<{text: string, bbox: {x0:number,y0:number,x1:number,y1:number}}>}>}
  */
 export async function runOCR(imageFile, language, onProgress = () => {}) {
   let worker = null;
   const startTime = performance.now();
-
-  console.log('═══════════════════════════════════════════════════════');
-  console.log('[LipiSathi OCR] OCR PIPELINE STARTED');
-  console.log('[LipiSathi OCR] Language:', language);
-  console.log('[LipiSathi OCR] Image type:', typeof imageFile);
-  console.log('[LipiSathi OCR] Image instanceof Blob:', imageFile instanceof Blob);
-  console.log('[LipiSathi OCR] Image instanceof File:', imageFile instanceof File);
-  if (typeof imageFile === 'string') {
-    console.log('[LipiSathi OCR] Image data URL length:', imageFile.length);
-    console.log('[LipiSathi OCR] Image data URL prefix:', imageFile.substring(0, 50));
-  }
-  console.log('═══════════════════════════════════════════════════════');
+  const name = language
+    .split('+')
+    .map((code) => languageName(code))
+    .join(' + ');
 
   try {
-    // STEP 1: Create Worker
-    console.log('[LipiSathi OCR] STEP 1: createWorker() START');
-    console.log('[LipiSathi OCR] - Using default CDN langPath (tessdata.projectnaptha.com/4.0.0)');
-    onProgress('Initializing Tesseract worker...');
-
+    onProgress('Initializing OCR engine...');
     worker = await createWorker({
-      // Use CDN traineddata (guaranteed compatible with core version v4.0.4)
-      // langPath defaults to: 'https://tessdata.projectnaptha.com/4.0.0'
-      errorHandler: (err) => {
-        console.error('[Tesseract ERROR HANDLER]', err);
-      },
+      ...getOcrPaths(),
+      errorHandler: (err) => console.error('[Tesseract ERROR HANDLER]', err),
       logger: (m) => {
-        console.log('[Tesseract Logger]', m);
-        // Handle progress messages from Tesseract.js
-        if (m.status === 'loading tesseract core') {
-          onProgress('Loading Tesseract core...');
-        } else if (m.status === 'initializing tesseract') {
-          onProgress('Initializing Tesseract...');
-        } else if (m.status === 'loading language traineddata') {
-          const langName = language === 'hin' ? 'Hindi' : 'Telugu';
-          onProgress(`Loading ${langName} model...`);
-        } else if (m.status === 'initializing api') {
-          onProgress('Initializing OCR API...');
-        } else if (m.status === 'recognizing text') {
-          const percent = Math.round(m.progress * 100);
-          onProgress(`Recognizing text... ${percent}%`);
-        }
-      }
+        log(m);
+        if (m.status === 'loading tesseract core') onProgress('Loading OCR engine...');
+        else if (m.status === 'initializing tesseract') onProgress('Initializing OCR engine...');
+        else if (m.status === 'loading language traineddata') onProgress(`Loading ${name} model...`);
+        else if (m.status === 'initializing api') onProgress('Initializing OCR API...');
+        else if (m.status === 'recognizing text') onProgress(`Recognizing text... ${Math.round(m.progress * 100)}%`);
+      },
     });
 
-    console.log('[LipiSathi OCR] STEP 1: createWorker() SUCCESS');
-    console.log('[LipiSathi OCR] - Worker object exists:', !!worker);
-    console.log('[LipiSathi OCR] - Worker type:', typeof worker);
-
-    // STEP 2: Load Language
-    console.log('[LipiSathi OCR] STEP 2: loadLanguage() START');
-    console.log('[LipiSathi OCR] - Language code:', language);
-    console.log('[LipiSathi OCR] - Expected model: /tessdata/' + language + '.traineddata');
-    onProgress('Loading language model...');
-    
+    onProgress(`Loading ${name} model...`);
     await worker.loadLanguage(language);
-    
-    console.log('[LipiSathi OCR] STEP 2: loadLanguage() SUCCESS');
-
-    // STEP 3: Initialize
-    console.log('[LipiSathi OCR] STEP 3: initialize() START');
-    console.log('[LipiSathi OCR] - Language code:', language);
-    onProgress('Initializing OCR...');
-    
     await worker.initialize(language);
-    
-    console.log('[LipiSathi OCR] STEP 3: initialize() SUCCESS');
 
-    // STEP 4: Recognize
-    console.log('[LipiSathi OCR] STEP 4: recognize() START');
-    console.log('[LipiSathi OCR] - Image input exists:', !!imageFile);
-    console.log('[LipiSathi OCR] - Image input type:', typeof imageFile);
     onProgress('Starting OCR recognition...');
-
     const { data } = await worker.recognize(imageFile);
-
-    console.log('[LipiSathi OCR] STEP 4: recognize() SUCCESS');
-    console.log('[LipiSathi OCR] - Result data exists:', !!data);
-    console.log('[LipiSathi OCR] - Text exists:', !!data?.text);
-    console.log('[LipiSathi OCR] - Text length:', data?.text?.length || 0);
-    console.log('[LipiSathi OCR] - Text preview:', data?.text?.substring(0, 100) || '(empty)');
-    console.log('[LipiSathi OCR] - Confidence:', data?.confidence || 0);
-
-    const endTime = performance.now();
-    const processingTime = (endTime - startTime) / 1000;
-
-    console.log('[LipiSathi OCR] - Processing time:', processingTime.toFixed(2), 'seconds');
-
-    // STEP 5: Cleanup
-    console.log('[LipiSathi OCR] STEP 5: terminate() START');
+    const processingTime = (performance.now() - startTime) / 1000;
     await worker.terminate();
-    console.log('[LipiSathi OCR] STEP 5: terminate() SUCCESS');
+    worker = null;
 
-    console.log('═══════════════════════════════════════════════════════');
-    console.log('[LipiSathi OCR] OCR PIPELINE COMPLETED SUCCESSFULLY');
-    console.log('═══════════════════════════════════════════════════════');
+    log('done', { chars: data?.text?.length || 0, confidence: data?.confidence, seconds: processingTime });
 
     return {
       text: data.text || '',
       confidence: data.confidence || 0,
-      processingTime: parseFloat(processingTime.toFixed(2))
+      processingTime: parseFloat(processingTime.toFixed(2)),
+      lines: (data.lines || [])
+        .filter((l) => l.text && l.text.trim())
+        .map((l) => ({ text: l.text.trim(), bbox: l.bbox })),
     };
-
   } catch (error) {
-    console.error('═══════════════════════════════════════════════════════');
-    console.error('[LipiSathi OCR] OCR PIPELINE FAILED');
-    console.error('[LipiSathi OCR] Error object:', error);
-    console.error('[LipiSathi OCR] Error name:', error?.name);
-    console.error('[LipiSathi OCR] Error message:', error?.message);
-    console.error('[LipiSathi OCR] Error stack:', error?.stack);
-    console.error('[LipiSathi OCR] Error string:', String(error));
-    console.error('═══════════════════════════════════════════════════════');
-
-    // Ensure worker is terminated even on error
+    console.error('[LipiSathi OCR] OCR failed:', error);
     if (worker) {
       try {
-        console.log('[LipiSathi OCR] Attempting worker cleanup after error...');
         await worker.terminate();
-        console.log('[LipiSathi OCR] Worker cleanup successful');
       } catch (terminateError) {
         console.error('[LipiSathi OCR] Worker cleanup failed:', terminateError);
       }
     }
-
-    // Provide meaningful error message
-    const errorMessage = 
-      error?.message || 
-      error?.toString?.() || 
-      String(error) ||
-      'Unknown OCR error (no error details available)';
-    
-    throw new Error(`OCR failed: ${errorMessage}`);
+    const message = error?.message || error?.toString?.() || String(error) || 'Unknown OCR error';
+    throw new Error(`OCR failed: ${message}`);
   }
 }
 
-/**
- * Get display name for language code
- */
+/** Kept for backward compatibility; see config/languages.js. */
 export function getLanguageName(langCode) {
-  const names = {
-    hin: 'Hindi',
-    tel: 'Telugu'
-  };
-  return names[langCode] || langCode;
+  return languageName(langCode);
 }
